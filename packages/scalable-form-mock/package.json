@@ -1,0 +1,23 @@
+{
+  "name": "scalable-form-mock",
+  "version": "0.1.0",
+  "description": "ScalableForm的mock数据",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.tsx",
+  "typings": "src/index.tsx",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "mkdir ../../dist/scalable-form-mock && cp -R ./src/* ../../dist/scalable-form-mock",
+    "start": "exit 0",
+    "stop": "exit 0",
+    "dev": "exit 0",
+    "test": "exit 0"
+  }
+}

@@ -1,0 +1,20 @@
+/* antd-mobile必须要指定label的字数值，把这个宽度约束放开 */
+.xform-custom-input {
+    .am-list-item {
+        .am-input-label.am-input-label-5 {
+            width: 100px;
+            max-width: 100px;
+            margin-right: 10px;
+            white-space: normal;
+            overflow: visible;
+            line-height: 32px;
+        }
+        .am-input-control {
+            flex: 1.0;
+            -webkit-flex: 1.0;
+        }
+        &.am-input-item {
+            height: auto;
+        }
+    }
+}

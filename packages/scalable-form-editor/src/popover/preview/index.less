@@ -1,0 +1,27 @@
+/**
+ * 浮层样式
+ */
+
+@import "../../common/variable.less";
+
+.app-xform-builder-preview-popover {
+    z-index: @zIndex + 1 !important;
+    .preview-wrapper {
+        min-width: 700px;
+        max-height: 600px;
+        overflow: auto;
+        .mobile-preview-demo-wrapper {
+            margin: 0 auto;
+            width: 478px;
+            height: 963px;
+            background: url("//gtms03.alicdn.com/tps/i3/TB1n05NGFXXXXbeXFXX7XyaQpXX-478-963.png") no-repeat;
+            .iframe {
+                margin-left: 33px;
+                margin-top: 193px;
+                width: 414px;
+                height: 652px;
+                background: #fff;
+            }
+        }
+    }
+}

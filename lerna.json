@@ -1,0 +1,17 @@
+{
+  "command": {
+    "version": {
+      "allowBranch": [
+        "master",
+        "daily/*",
+        "test/*"
+      ]
+    }
+  },
+  "npmClient": "npm",
+  "packages": [
+    "example/*",
+    "packages/*"
+  ],
+  "version": "0.1.0"
+}

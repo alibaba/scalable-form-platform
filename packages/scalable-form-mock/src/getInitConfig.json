@@ -1,0 +1,242 @@
+{
+  "success": true,
+  "data": {
+    "systemTemplate": {
+      "fields": [{
+        "code": "memberId",
+        "label": "会员ID",
+        "fieldType": "system",
+        "type": "input",
+        "required": true,
+        "jsonSchema": {
+          "memberId": {
+            "type": "string",
+            "title": "会员ID"
+          }
+        },
+        "uiSchema": {
+          "memberId": {
+            "ui:options": {
+              "placeholder": "请输入会员ID",
+              "validate": [{
+                "type": "empty",
+                "message": "该项目为必填项"
+              }]
+            }
+          }
+        },
+        "formData": {
+          "memberId": 13412314213214
+        },
+        "bizData": {
+          "memberId": {
+            "autoSearch": false,
+            "needIndex": true
+          }
+        }
+      }, {
+        "code": "memberName",
+        "label": "会员名",
+        "fieldType": "system",
+        "type": "input",
+        "required": true,
+        "jsonSchema": {
+          "memberName": {
+            "type": "string",
+            "title": "会员ID"
+          }
+        },
+        "uiSchema": {
+          "memberName": {
+            "ui:placeholder": "请输入会员名",
+            "ui:options": {
+              "validate": [{
+                "type": "empty",
+                "message": "该项目为必填项"
+              }]
+            }
+          }
+        },
+        "formData": {
+          "memberName": "仁者无敌"
+        },
+        "bizData": {
+          "memberName": {
+            "autoSearch": false,
+            "needIndex": true
+          }
+        }
+      }]
+    },
+    "commonTemplate": {
+      "fields": [{
+        "code": "bizStatus",
+        "label": "业务状态这里的业务状态包括启用中与停用",
+        "type": "select",
+        "fieldType": "common",
+        "required": false,
+        "jsonSchema": {
+          "bizStatus": {
+            "type": "string",
+            "title": "业务状态",
+            "enum": ["doing", "done"],
+            "enumNames": ["进行中", "已完成"]
+          }
+        },
+        "uiSchema": {
+          "bizStatus": {
+            "ui:widget": "select"
+          }
+        },
+        "formData": {
+          "bizStatus": "done"
+        },
+        "bizData": {
+          "bizStatus": {
+            "autoSearch": true,
+            "needIndex": false
+          }
+        }
+      }, {
+        "code": "finishData",
+        "label": "最终完成日期",
+        "type": "date",
+        "fieldType": "common",
+        "required": false,
+        "jsonSchema": {
+          "finishData": {
+            "type": "string",
+            "title": "最终完成日期",
+            "format": "date"
+          }
+        },
+        "uiSchema": {
+          "finishData": {
+            "ui:widget": "date"
+          }
+        },
+        "formData": {
+          "finishData": ""
+        },
+        "bizData": {
+          "finishData": {
+            "autoSearch": false,
+            "needIndex": true
+          }
+        }
+      }]
+    },
+    "attributeTemplate": {
+      "fields": [{
+        "code": "autoSearch",
+        "label": "支持搜索",
+        "fieldType": "custom",
+        "type": "booleanCheckbox",
+        "required": false,
+        "jsonSchema": {
+          "autoSearch": {
+            "type": "boolean",
+            "title": "支持搜索"
+          }
+        },
+        "uiSchema": {
+          "autoSearch": {
+            "ui:help": "用户能在页面内根据这个字段进行搜索"
+          }
+        },
+        "formData": {
+          "autoSearch": false
+        }
+      }, {
+        "code": "needIndex",
+        "label": "是否建立索引",
+        "fieldType": "custom",
+        "type": "booleanCheckbox",
+        "required": false,
+        "jsonSchema": {
+          "needIndex": {
+            "type": "boolean",
+            "title": "是否建立索引"
+          }
+        },
+        "uiSchema": {
+          "needIndex": {
+            "ui:help": "工单数据库字段是否需要建立索引"
+          }
+        },
+        "formData": {
+          "needIndex": false
+        }
+      }]
+    },
+    "optionTemplate": {
+      "fields": [{
+        "code": "optionValue",
+        "label": "质检分值",
+        "fieldType": "custom",
+        "type": "inputNumber",
+        "required": false,
+        "jsonSchema": {
+          "optionValue": {
+            "type": "number",
+            "title": "质检分值"
+          }
+        },
+        "uiSchema": {
+          "optionValue": {
+            "ui:widget": "updown",
+            "ui:help": "该选项背后的质检分值"
+          }
+        },
+        "formData": {
+          "optionValue": ""
+        }
+      }, {
+        "code": "optionAuthgrithm",
+        "label": "选项适用算法",
+        "fieldType": "custom",
+        "type": "select",
+        "required": false,
+        "jsonSchema": {
+          "optionAuthgrithm": {
+            "type": "string",
+            "title": "选项适用算法",
+            "enum": ["qizha", "ruma"],
+            "enumNames": ["欺诈程度算法", "辱骂程度算法"]
+          }
+        },
+        "uiSchema": {
+          "optionAuthgrithm": {
+            "ui:widget": "select",
+            "ui:help": "选择选中该选项需要根据怎样的算法来计算质检分"
+          }
+        },
+        "formData": {
+          "optionAuthgrithm": "qizha"
+        }
+      }]
+    },
+    "langs": [{
+      "name": "English",
+      "locale": "en",
+      "enabled": true
+    }, {
+      "name": "Indonesia",
+      "locale": "id",
+      "enabled": false
+    }, {
+      "name": "Malay Language",
+      "locale": "ms",
+      "enabled": true
+    }, {
+      "name": "Thai",
+      "locale": "th",
+      "enabled": false
+    }, {
+      "name": "Vietnamese",
+      "locale": "vi",
+      "enabled": false
+    }],
+    "defaultLang": "en"
+  }
+}

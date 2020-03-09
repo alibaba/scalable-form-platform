@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "errorMessage": "如果有错误消息放这里",
+  "data": {
+    "data": [{
+      "label": "不使用数据源",
+      "value": ""
+    }, {
+      "label": "业务类型选择器",
+      "value": "bizType"
+    }, {
+      "label": "数据源列表",
+      "value": "dataSourceList"
+    }, {
+      "label": "人员列表",
+      "value": "memberList"
+    }]
+  }
+}

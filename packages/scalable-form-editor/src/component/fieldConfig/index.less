@@ -1,0 +1,171 @@
+/**
+ * “字段属性设置”组件样式
+ */
+
+@import "../../common/variable.less";
+
+.app-xform-builder-field-config-wrapper {
+    .xform-item {
+        margin-bottom: 10px !important;
+    }
+    .field-config-block {
+        position: relative;
+        .field-config-block-item {
+            border-bottom: 1px solid @default-border-color;
+            padding: 0 20px;
+            .field-config-block-header {
+                height: 40px;
+                line-height: 40px;
+                color: @default-first-class-font-color;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                .expand-icon {
+                    margin-right: 10px;
+                    display: inline-block;
+                    font-size: 12px;
+                }
+            }
+
+            .field-config-block-content {
+                margin-bottom: 20px;
+                .cascade-config {
+                    .cascade-config-panel {
+                        padding-top: 20px;
+                        padding-left: 15px;
+                        .panel-label {
+                            text-align: right;
+                            label {
+                                line-height: 42px;
+                                &:after {
+                                    content: ':';
+                                    margin: 0 8px 0 2px;
+                                }
+                            }
+                        }
+                        button {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+
+            &.fold {
+                .expand-icon {
+                    transform: rotate(270deg);
+                }
+            }
+        }
+    }
+
+    .empty-box {
+        text-align: center;
+        margin-top: 50%;
+        color: @default-third-class-font-color;
+        padding: 10px 0;
+        .empty-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .empty-tip {
+            font-size: 12px;
+        }
+    }
+}
+
+.app-xform-builder-show-config-modal {
+    padding: 8px;
+    z-index: @zIndex + 1;
+    .show-config-title {
+        font-size: 14px;
+        line-height: 28px;
+        color: @default-first-class-font-color;
+    }
+    .show-config-option-list {
+        min-height: 360px;
+        border: 1px solid @default-border-color;
+        width: 100%;
+        .show-config-option-item {
+            line-height: 32px;
+            font-size: 14px;
+            padding: 0 5px;
+            color: @default-first-class-font-color;
+            cursor: pointer;
+            &.current {
+                background-color: #108ee9;
+                color: @color-white;
+            }
+        }
+    }
+    .show-field-list {
+        min-height: 360px;
+        border: 1px solid @default-border-color;
+        width: 100%;
+        .show-field-item {
+            line-height: 32px;
+            font-size: 14px;
+            padding: 0 5px;
+            color: @default-first-class-font-color;
+            cursor: pointer;
+            position: relative;
+            &:hover {
+                background-color: @default-bg-color;
+            }
+            label {
+                cursor: pointer;
+            }
+            .checkbox {
+                position: absolute;
+                top: 1px;
+                right: 10px;
+            }
+        }
+        .empty {
+            text-align: center;
+            font-size: 14px;
+            color: @default-third-class-font-color;
+            margin-top: 140px;
+        }
+    }
+}
+
+.app-xform-builder-update-dataSource-config-modal {
+    padding: 8px;
+    z-index: @zIndex + 1;
+    .update-dataSource-config-title {
+        font-size: 14px;
+        line-height: 28px;
+        color: @default-first-class-font-color;
+    }
+    .update-dataSource-list {
+        min-height: 360px;
+        border: 1px solid @default-border-color;
+        width: 100%;
+        .update-dataSource-item {
+            line-height: 32px;
+            font-size: 14px;
+            padding: 0 5px;
+            color: @default-first-class-font-color;
+            cursor: pointer;
+            position: relative;
+            &:hover {
+                background-color: @default-bg-color;
+            }
+            label {
+                cursor: pointer;
+            }
+            .checkbox {
+                position: absolute;
+                top: 1px;
+                right: 10px;
+            }
+        }
+        .empty {
+            text-align: center;
+            font-size: 14px;
+            color: @default-third-class-font-color;
+            margin-top: 140px;
+        }
+    }
+}

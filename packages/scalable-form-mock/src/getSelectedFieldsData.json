@@ -1,0 +1,107 @@
+{
+  "success": true,
+  "data":  {
+    "fields": [{
+      "code": "memberId",
+      "label": "会员ID",
+      "fieldType": "system",
+      "type": "input",
+      "required": true,
+      "jsonSchema": {
+        "memberId": {
+          "type": "string",
+          "title": "会员ID"
+        }
+      },
+      "uiSchema": {
+        "memberId": {
+          "ui:placeholder": "请输入会员ID",
+          "ui:options": {
+            "validate": [{
+              "type": "empty",
+              "message": "该项目为必填项"
+            }]
+          }
+        }
+      },
+      "formData": {
+        "memberId": 13412314213214
+      },
+      "bizData": {
+        "memberId": {
+          "autoSearch": false,
+          "needIndex": true
+        }
+      }
+    }, {
+      "code": "memberName",
+      "label": "会员名",
+      "fieldType": "system",
+      "type": "input",
+      "required": true,
+      "jsonSchema": {
+        "memberName": {
+          "type": "string",
+          "title": "会员ID"
+        }
+      },
+      "uiSchema": {
+        "memberName": {
+          "ui:placeholder": "请输入会员名",
+          "ui:options": {
+            "validate": [{
+              "type": "empty",
+              "message": "该项目为必填项"
+            }]
+          }
+        }
+      },
+      "formData": {
+        "memberName": "仁者无敌"
+      },
+      "bizData": {
+        "memberName": {
+          "autoSearch": false,
+          "needIndex": true
+        }
+      }
+    }, {
+      "code": "telephone",
+      "label": "电话号码",
+      "fieldType": "custom",
+      "type": "textarea",
+      "required": true,
+      "jsonSchema": {
+        "telephone": {
+          "type": "string",
+          "title": "电话号码"
+        }
+      },
+      "uiSchema": {
+        "telephone": {
+          "ui:widget": "textarea",
+          "ui:placeholder": "请输入电话号码",
+          "ui:help": "11位电话号码",
+          "ui:options": {
+            "validate": [{
+              "type": "empty",
+              "message": "该项目为必填项"
+            }, {
+              "type": "telephone",
+              "message": "必须符合电话格式"
+            }]
+          }
+        }
+      },
+      "formData": {
+        "telephone": "这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常这个世界要常常常常常常"
+      },
+      "bizData": {
+        "telephone": {
+          "autoSearch": true,
+          "needIndex": false
+        }
+      }
+    }]
+  }
+}

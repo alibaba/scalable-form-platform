@@ -1,0 +1,108 @@
+/**
+ * xform组件库配置样式，通过className属性注入
+ */
+
+.xform-antd-wrapper {
+    &.xform-inline {
+        .xform-item {
+            padding-right: 15px;
+        }
+    }
+
+    .xform-hidden {
+        display: none !important;
+    }
+
+    /* 隐藏field的title，可配置在xform标签或ui:schema的classNames属性 */
+    &.xform-title-hidden {
+        label.control-label {
+            display: none !important;
+        }
+    }
+
+    /* 隐藏xform的提交按钮，xform标签使用 */
+    &.xform-action-hidden {
+        .xform-submit-button {
+            display: none !important;
+        }
+    }
+
+    legend {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: inherit;
+        color: #333;
+        border: 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .field-description {
+        margin: 0 0 10px;
+        font-size: 14px;
+    }
+    fieldset {
+        border: 0 !important; /* 浏览器原生fieldset都附带1px的border，xform这里不需要，统一去除掉 */
+    }
+    .xform-item {
+        margin-bottom: 18px;
+    }
+    label.control-label {
+        &:after {
+            content: ":";
+            margin: 0 8px 0 2px;
+        }
+        &.required {
+            &:before {
+                display: inline-block;
+                margin-right: 4px;
+                font-family: SimSun;
+                content: "*";
+                line-height: 1;
+                font-size: 12px;
+                color: #f04134;
+            }
+        }
+    }
+
+    /* 修正.ant-form-item-control样式对富文本编辑器toolbar的样式影响 */
+    .ant-form-item-control {
+        &.xform-custom-richtext {
+            line-height: normal;
+        }
+    }
+
+    /* 修正Select和Picker类型选择器宽度不会撑开的问题 */
+    .ant-cascader-picker, .ant-select {
+        width: 100%;
+    }
+
+    /* 修正字段说明中以及段落配置了图片宽度超出容器的问题 */
+    img {
+        max-width: 100%;
+    }
+
+    /* array类型样式 */
+    .xform-array-field {
+        .xform-array-field-item {
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+            .xform-array-buttons {
+                margin-top: 5px;
+                text-align: right;
+                button {
+                    margin-left: 5px;
+                }
+            }
+        }
+        .xform-array-bottom {
+            text-align: right;
+        }
+    }
+
+    .ant-form-explain {
+        min-height: auto;
+    }
+}

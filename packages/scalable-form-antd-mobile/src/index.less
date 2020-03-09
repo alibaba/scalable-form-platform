@@ -1,0 +1,64 @@
+/**
+ * xform组件库配置样式，通过className属性注入
+ */
+
+.xform-antd-mobile-wrapper {
+    &.xform-inline {
+        .xform-item {
+            padding-right: 15px;
+        }
+    }
+
+    .xform-hidden {
+        display: none !important;
+    }
+
+    /* 隐藏field的title，可配置在xform标签或ui:schema的classNames属性 */
+    &.xform-title-hidden {
+        label.control-label {
+            display: none !important;
+        }
+    }
+
+    /* 隐藏xform的提交按钮，xform标签使用 */
+    &.xform-action-hidden {
+        .xform-submit-button {
+            display: none !important;
+        }
+    }
+
+    label.required {
+        &:after {
+            display: inline-block;
+            margin-right: 4px;
+            font-family: SimSun;
+            content: "*";
+            line-height: 0.5;
+            font-size: 17px;
+            color: #f04134;
+        }
+    }
+    .am-list-body {
+        background-color: transparent !important;
+    }
+    .am-list-content {
+        &.disabled {
+            color: #bbb;
+        }
+    }
+    .xform-help {
+        color: #999;
+        padding-left: 15px;
+        margin: 7px 0 10px 0;
+        &.disabled {
+            color: #bbb;
+        }
+    }
+    .xform-item-has-error {
+        .xform-item-error-explain {
+            color: #f50;
+            padding-left: 15px;
+            margin: 7px 0 10px 0;
+        }
+    }
+}

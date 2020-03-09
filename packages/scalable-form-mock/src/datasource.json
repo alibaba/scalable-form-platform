@@ -1,0 +1,21 @@
+{
+    "success": true,
+    "errorMessage": "如果有错误消息放这里",
+    "data": {
+        "defaultValue": "dataSourceList",
+        "help": "请选择对应的数据源，看看能不能更新上去",
+        "data": [{
+            "label": "请选择数据源",
+            "value": ""
+        }, {
+            "label": "业务类型选择器",
+            "value": "bizType"
+        }, {
+            "label": "数据源列表",
+            "value": "dataSourceList"
+        }, {
+            "label": "人员列表",
+            "value": "memberList"
+        }]
+    }
+}

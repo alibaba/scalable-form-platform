@@ -1,0 +1,20 @@
+/* antd-mobile必须要指定label的字数值，把这个宽度约束放开 */
+.xform-custom-textarea {
+    .am-textarea-item {
+        .am-textarea-label.am-textarea-label-5 {
+            width: 100px;
+            max-width: 100px;
+            margin-right: 10px;
+            white-space: normal;
+            overflow: visible;
+        }
+        .am-textarea-control {
+            flex: 1.0;
+            -webkit-flex: 1.0;
+            min-height: 75px;
+        }
+        &.am-textarea-item {
+            height: auto;
+        }
+    }
+}

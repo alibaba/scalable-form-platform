@@ -1,0 +1,161 @@
+/**
+ * xform-builder中间“生效字段”样式
+ */
+
+@import "../../common/variable.less";
+
+.app-xform-builder-field-list-wrapper {
+    padding: 18px 7px;
+    .inner-wrapper {
+        width: 48%;
+        min-width: 240px;
+        margin: 0 auto;
+        .system-preview-wrapper {
+            border-bottom: 1px dashed @color-gray;
+            margin-bottom: 8px;
+            .template-title {
+                line-height: 20px;
+                border-radius: 4px;
+                color: @default-third-class-font-color;
+                font-size: 12px;
+                position: relative;
+                cursor: pointer;
+                max-width: 180px;
+                min-width: 100px;
+                height: 20px;
+                text-align: center;
+                margin: 10px auto;
+                border-radius: 4px;
+                background: rgba(205, 208, 210, 0.31);
+                .expand-icon {
+                    display: inline-block;
+                    position: absolute;
+                    right: 5px;
+                    top: 0;
+                    font-size: 12px;
+                }
+            }
+            &.fold {
+                .expand-icon {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+
+        .preview-list {
+            &.hidden {
+                display: none;
+            }
+            li.preview-list-item {
+                background: @color-white;
+                border: 1px solid @color-gray;
+                padding: 10px 24px;
+                border-radius: 4px;
+                cursor: move;
+                margin-bottom: 8px;
+                position: relative;
+                .list-item-wrapper {
+                    width: 100%;
+                    overflow: hidden;
+                    .field-index-number {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 16px;
+                        line-height: 16px;
+                        text-align: center;
+                        background: @color-gray;
+                        color: @color-white;
+                    }
+                    .list-item-header {
+                        text-align: left;
+                        .field-type-label {
+                            color: @default-third-class-font-color;
+                            font-size: 14px;
+                            font-weight: 500;
+                            &:after {
+                                content: ':';
+                                position: relative;
+                                top: -0.5px;
+                                margin: 0 8px 0 2px;
+                            }
+                        }
+                        .field-label {
+                            font-size: 14px;
+                            color: @default-first-class-font-color;
+                        }
+                    }
+
+                    .field-preview {
+                        width: 100%;
+                        margin-top: 5px;
+                        .xform-root {
+                            margin-bottom: 0 !important;
+                        }
+                        .xform-item {
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                    .not-support-tip {
+                        margin-top: 5px;
+                    }
+                    .delete-icon {
+                        cursor: pointer;
+                        position: absolute;
+                        color: @default-third-class-font-color;
+                        display: none;
+                        right: 5px;
+                        font-size: 12px;
+                        top: 5px;
+                    }
+                }
+                &.current {
+                    border: 1px solid @color-blue;
+                    .field-index-number {
+                        background: @color-blue;
+                    }
+                    .field-type-label {
+                        &.system {
+                            border-left: 6px solid @color-blue;
+                        }
+                    }
+                }
+                &:hover {
+                    border: 1px solid @color-blue;
+                    .field-index-number {
+                        background: @color-blue;
+                    }
+                    .field-type-label {
+                        &.system {
+                            border-left: 6px solid @color-blue;
+                        }
+                    }
+                    .delete-icon {
+                        display: block;
+                    }
+                }
+                &.system {
+                    cursor: pointer;
+                    border-left: 6px solid @color-gray;
+                }
+            }
+
+        }
+        .empty-box {
+            text-align: center;
+            margin-top: 50%;
+            color: @default-third-class-font-color;
+            padding: 10px 0;
+            .empty-icon {
+                font-size: 20px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            .empty-tip {
+                font-size: 12px;
+            }
+        }
+    }
+}
