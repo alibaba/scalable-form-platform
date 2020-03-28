@@ -1,9 +1,9 @@
 {
   "name": "scalable-form-antd-mobile",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "scalable-form-antd-mobile组件是基于scalable-form-core，采用antd-mobileUI渲染组件的表单sdk",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "src/index.js",
   "typings": "src/index.js",
   "directories": {
@@ -25,7 +25,6 @@
     "build:copy": "mkdir ../../dist/scalable-form-antd-mobile && ls ./build/* && cp ./build/* ../../dist/scalable-form-antd-mobile/"
   },
   "dependencies": {
-    "scalable-form-core": "^0.1.0",
     "antd-mobile": "^2.3.1",
     "classnames": "^2.2.6",
     "merge": "^1.2.0",
@@ -34,7 +33,8 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-if": "^2.2.1"
+    "react-if": "^2.2.1",
+    "scalable-form-core": "^0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

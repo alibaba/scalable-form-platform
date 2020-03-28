@@ -1,9 +1,9 @@
 {
   "name": "scalable-form-admin",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Scalable Form站点",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "src/index.tsx",
   "typings": "src/index.tsx",
   "directories": {
@@ -25,10 +25,6 @@
     "build:copy": "mkdir ../../dist/scalable-form-admin && ls ./build/* && cp ./build/* ../../dist/scalable-form-admin/"
   },
   "dependencies": {
-    "scalable-form-antd": "^0.1.0",
-    "scalable-form-antd-mobile": "^0.1.0",
-    "scalable-form-core": "^0.1.0",
-    "scalable-form-editor": "^0.1.0",
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.1.5",
     "@types/react-router-dom": "^5.1.2",
@@ -48,7 +44,11 @@
     "react-redux": "^4.4.8",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "scalable-form-antd": "^0.0.1",
+    "scalable-form-antd-mobile": "^0.0.1",
+    "scalable-form-core": "^0.0.1",
+    "scalable-form-editor": "^0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-use-server-sdk-with-egg",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Scalable Form 使用egg站点的demo",
   "private": true,
   "egg": {
@@ -16,9 +16,9 @@
     "test": "exit 0;"
   },
   "dependencies": {
-    "scalable-form-server": "^0.1.0",
     "egg": "^2.6.1",
-    "egg-scripts": "^2.6.0"
+    "egg-scripts": "^2.6.0",
+    "scalable-form-server": "^0.0.1"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",

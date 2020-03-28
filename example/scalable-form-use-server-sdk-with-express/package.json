@@ -1,10 +1,10 @@
 {
   "name": "scalable-form-use-server-sdk-with-express",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "description": "use-server-sdk-with-express",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "src/index.ts",
   "typings": "src/index.ts",
   "directories": {
@@ -60,9 +60,9 @@
     "publish": "exit 0"
   },
   "dependencies": {
-    "scalable-form-server": "^0.1.0",
     "cross-env": "^6.0.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "scalable-form-server": "^0.0.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",

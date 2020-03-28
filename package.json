@@ -8,7 +8,7 @@
     "dev:koa": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-koa --scope scalable-form-admin",
     "dev:express": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-express --scope scalable-form-admin",
     "dev:egg": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-egg --scope scalable-form-admin",
-    "postinstall": "lerna bootstrap --hoist && lerna exec --parallel npm install --scope scalable-form-server --scope scalable-form-use-server-sdk-with-egg",
+    "postinstall": "lerna bootstrap --hoist && lerna exec --parallel npm install --scope scalable-form-server && lerna exec --parallel npm install --scope scalable-form-use-server-sdk-with-egg",
     "prebuild": "node_modules/.bin/rimraf ./dist && mkdir dist",
     "build": "lerna run --parallel build",
     "build:storybook": "build-storybook -c .storybook -o ./dist",
@@ -21,10 +21,12 @@
     "publish:antd": "lerna run --parallel publish --scope scalable-form-antd",
     "publish:antd-mobile": "lerna run --parallel publish --scope scalable-form-antd-mobile",
     "publish:editor": "lerna run --parallel publish --scope scalable-form-editor",
-    "publish:admin": "lerna run --parallel publish --scope scalable-form-admin"
+    "publish:server": "lerna run --parallel publish --scope scalable-form-server"
   },
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
     "@storybook/react": "^5.2.5",
     "git-branch": "^2.0.1",
     "husky": "^1.3.1",
@@ -38,7 +40,8 @@
   },
   "husky": {
     "hooks": {
-      "post-checkout": "node ./scripts/version.js"
+      "post-checkout": "node ./scripts/version.js",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "__npminstall_done": false

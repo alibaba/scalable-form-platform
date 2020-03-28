@@ -1,10 +1,10 @@
 {
   "name": "scalable-form-use-server-sdk-with-koa",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "description": "Scalable Form 使用 Koa 站点的demo",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "src/index.ts",
   "typings": "src/index.ts",
   "directories": {
@@ -60,9 +60,9 @@
     "collectCoverage": true
   },
   "dependencies": {
-    "scalable-form-server": "^0.1.0",
     "cross-env": "^6.0.3",
-    "koa": "^2.11.0"
+    "koa": "^2.11.0",
+    "scalable-form-server": "^0.0.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",

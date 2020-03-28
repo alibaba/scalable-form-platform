@@ -1,9 +1,9 @@
 {
   "name": "scalable-form-server",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "服务端sdk",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "build/index.js",
   "typings": "build/index.js",
   "directories": {
