@@ -3,6 +3,12 @@
 
 A solution for editing and publish dynamic web forms with visual editor, providing react components for rendering web forms from [JSON schema](http://json-schema.org/) using [ant-design](https://github.com/rjsf-team/react-jsonschema-form) or [ant-design-mobile](https://github.com/ant-design/ant-design-mobile), an visual editor component to edit dynamic form json schema and an server library helping you build an dynamic form system.
 
+<p align="center">
+  <a href="https://scalable-form-platform.github.io/">
+    <img max-width="1440" src="https://img.alicdn.com/tfs/TB1MnB9z7Y2gK0jSZFgXXc5OFXa-1440-900.png">
+  </a>
+</p>
+
 ## ✨ 特性/features
 - 🛳 企业级解决方案和高稳定性
 - 📦 开箱即用的动态表单渲染sdk
