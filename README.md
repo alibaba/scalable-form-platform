@@ -3,9 +3,15 @@
 
 A solution for editing and publish dynamic web forms with visual editor, providing react components for rendering web forms from [JSON schema](http://json-schema.org/) using [ant-design](https://github.com/rjsf-team/react-jsonschema-form) or [ant-design-mobile](https://github.com/ant-design/ant-design-mobile), an visual editor component to edit dynamic form json schema and an server library helping you build an dynamic form system.
 
+![GitHub](https://img.shields.io/github/license/alibaba/scalable-form-platform?style=flat-square)
+![npm](https://img.shields.io/npm/v/scalable-form-antd?style=flat-square)
+![AppVeyor](https://img.shields.io/appveyor/build/alibaba/scalable-form-platform?style=flat-square)
+![AppVeyor tests](https://img.shields.io/appveyor/tests/alibaba/scalable-form-platform?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/alibaba/scalable-form-platform?style=flat-square)
+
 <p align="center">
-  <a href="https://scalable-form-platform.github.io/">
-    <img max-width="1440" src="https://img.alicdn.com/tfs/TB1MnB9z7Y2gK0jSZFgXXc5OFXa-1440-900.png">
+  <a href="https://scalable-form-platform.github.io/" target="_blank">
+    <img max-width="1440" src="https://img.alicdn.com/tfs/TB1MnB9z7Y2gK0jSZFgXXc5OFXa-1440-900.png" />
   </a>
 </p>
 
@@ -29,10 +35,10 @@ This repository is a monorepo that we manage using [Lerna](https://github.com/le
 
 |  Package | Version  | Docs  | Description  |
 |  ----  | ----  | ----  | ----  |
-| scalable-form-antd  | | | 基于react-jsonschema-form，结合ant-design的动态表单渲染sdk |
-| scalable-form-antd-mobile  | | | 基于react-jsonschema-form，结合ant-design-mobile的动态表单渲染sdk，适用于移动端的渲染sdk |
-| scalable-form-editor  | | | 表单可视化编辑器，可视化编排表单，产出scalable-form-antd和scalable-form-antd-mobile可用的schema |
-| scalable-form-server  | | | 服务端sdk，用户可以基于scalable-form-server保存表单配置。服务端sdk提供一个可用的表单站点，提供表单编排，表单管理，表单投放，数据回流分析的能力。 |
+| scalable-form-antd  | [![npm](https://img.shields.io/npm/v/scalable-form-antd.svg?style=flat-square)](https://www.npmjs.com/package/scalable-form-antd) | | 基于react-jsonschema-form，结合ant-design的动态表单渲染sdk |
+| scalable-form-antd-mobile  | [![npm](https://img.shields.io/npm/v/scalable-form-antd-mobile.svg?style=flat-square)](https://www.npmjs.com/package/scalable-form-antd-mobile)| | 基于react-jsonschema-form，结合ant-design-mobile的动态表单渲染sdk，适用于移动端的渲染sdk |
+| scalable-form-editor  | [![npm](https://img.shields.io/npm/v/scalable-form-editor.svg?style=flat-square)](https://www.npmjs.com/package/scalable-form-editor) | | 表单可视化编辑器，可视化编排表单，产出scalable-form-antd和scalable-form-antd-mobile可用的schema |
+| scalable-form-server  | [![npm](https://img.shields.io/npm/v/scalable-form-server.svg?style=flat-square)](https://www.npmjs.com/package/scalable-form-server) | | 服务端sdk，用户可以基于scalable-form-server保存表单配置。服务端sdk提供一个可用的表单站点，提供表单编排，表单管理，表单投放，数据回流分析的能力。 |
 
 ## 🖥 浏览器支持/Environment Support
 
