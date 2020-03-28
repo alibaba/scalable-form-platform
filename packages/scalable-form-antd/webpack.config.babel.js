@@ -117,10 +117,10 @@ function getConfig(env, withAntdBundle) {
         amd: 'moment'
       },
       "scalable-form-core": {
-        root: 'ScalableFormCore',
-        commonjs2: 'ScalableFormCore',
-        commonjs: 'ScalableFormCore',
-        amd: 'ScalableFormCore'
+        root: 'scalable-form-core',
+        commonjs2: 'scalable-form-core',
+        commonjs: 'scalable-form-core',
+        amd: 'scalable-form-core'
       }
     }
   };

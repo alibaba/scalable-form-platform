@@ -41,7 +41,7 @@ function getConfig(env) {
       publicPath: '/',
       devtoolModuleFilenameTemplate: "scalable-form-core:///[resourcePath]?[hash]",
       devtoolFallbackModuleFilenameTemplate: "scalable-form-core:///[resourcePath]?[hash]",
-      library: ["ScalableFormCore"],
+      library: ["scalable-form-core"],
       libraryTarget: "umd",
       path: path.join(__dirname, 'build'), // __dirname + '/build',
       filename: '[name].js'
