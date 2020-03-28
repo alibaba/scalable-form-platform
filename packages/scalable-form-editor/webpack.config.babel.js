@@ -65,9 +65,9 @@ function getConfig(env) {
     target: 'web',
     output: {
       publicPath: '/',
-      devtoolModuleFilenameTemplate: "ScalableFormEditor:///[resourcePath]?[hash]",
-      devtoolFallbackModuleFilenameTemplate: "ScalableFormEditor:///[resourcePath]?[hash]",
-      library: ["ScalableFormEditor"],
+      devtoolModuleFilenameTemplate: "scalable-form-editor:///[resourcePath]?[hash]",
+      devtoolFallbackModuleFilenameTemplate: "scalable-form-editor:///[resourcePath]?[hash]",
+      library: ["scalable-form-editor"],
       libraryTarget: "umd",
       path: path.join(__dirname, 'build'), // __dirname + '/build',
       filename: '[name].js'
@@ -123,10 +123,10 @@ function getConfig(env) {
         amd: 'scalable-form-core'
       },
       "scalable-form-antd": {
-        "root": "ScalableForm",
-        "commonjs2": "ScalableForm",
-        "commonjs": "ScalableForm",
-        "amd": "ScalableForm"
+        "root": "scalable-form-antd",
+        "commonjs2": "scalable-form-antd",
+        "commonjs": "scalable-form-antd",
+        "amd": "scalable-form-antd"
       },
     }
   };

@@ -65,9 +65,9 @@ function getConfig(env, withAntdBundle) {
     target: 'web',
     output: {
       publicPath: '/',
-      devtoolModuleFilenameTemplate: "ScalableFormAntdMobile:///[resourcePath]?[hash]",
-      devtoolFallbackModuleFilenameTemplate: "ScalableFormAntdMobile:///[resourcePath]?[hash]",
-      library: ["ScalableFormAntdMobile"],
+      devtoolModuleFilenameTemplate: "scalable-form-antd-mobile:///[resourcePath]?[hash]",
+      devtoolFallbackModuleFilenameTemplate: "scalable-form-antd-mobile:///[resourcePath]?[hash]",
+      library: ["scalable-form-antd-mobile"],
       libraryTarget: "umd",
       path: path.join(__dirname, 'build'), // __dirname + '/build',
       filename: '[name].js'
