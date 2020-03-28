@@ -15,7 +15,7 @@
     "start": "lerna run --stream start --scope scalable-form-server",
     "stop": "lerna run --stream stop",
     "test": "lerna run --parallel test --scope scalable-form-core && coveralls < packages/scalable-form-core/coverage/lcov.info",
-    "publish": "node ./scripts/version.js && lerna run --parallel publish",
+    "publish": "lerna run --parallel publish",
     "publish:daily": "node ./scripts/version-daily.js && npm run publish",
     "publish:core": "lerna run --parallel publish --scope scalable-form-core",
     "publish:antd": "lerna run --parallel publish --scope scalable-form-antd",
