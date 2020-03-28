@@ -3,11 +3,11 @@
 
 A solution for editing and publish dynamic web forms with visual editor, providing react components for rendering web forms from [JSON schema](http://json-schema.org/) using [ant-design](https://github.com/rjsf-team/react-jsonschema-form) or [ant-design-mobile](https://github.com/ant-design/ant-design-mobile), an visual editor component to edit dynamic form json schema and an server library helping you build an dynamic form system.
 
-![GitHub](https://img.shields.io/github/license/alibaba/scalable-form-platform?style=flat-square)
-![npm](https://img.shields.io/npm/v/scalable-form-antd?style=flat-square)
-![AppVeyor](https://img.shields.io/appveyor/build/alibaba/scalable-form-platform?style=flat-square)
-![AppVeyor tests](https://img.shields.io/appveyor/tests/alibaba/scalable-form-platform?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/alibaba/scalable-form-platform?style=flat-square)
+![GitHub](https://img.shields.io/github/license/alibaba/scalable-form-platform?style=flat)
+![npm](https://img.shields.io/npm/v/scalable-form-antd?style=flat)
+![Travis (.org)](https://api.travis-ci.com/alibaba/scalable-form-platform.svg?branch=daily%2F0.0.2)
+![GitHub last commit](https://img.shields.io/github/last-commit/alibaba/scalable-form-platform?style=flat)
+![GitHub issues](https://img.shields.io/github/issues/alibaba/scalable-form-platform)
 
 <p align="center">
   <a href="https://scalable-form-platform.github.io/" target="_blank">
