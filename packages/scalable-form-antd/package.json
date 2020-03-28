@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-antd",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "基于antd组件，渲染scalable-form表单",
   "homepage": "",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "react-dom": "^16.8.6",
     "react-if": "^2.2.1",
     "react-quill": "^1.3.3",
-    "scalable-form-core": "^0.0.1"
+    "scalable-form-core": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

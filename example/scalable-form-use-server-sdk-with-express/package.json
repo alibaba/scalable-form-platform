@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-use-server-sdk-with-express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "use-server-sdk-with-express",
   "homepage": "",
@@ -62,7 +62,7 @@
   "dependencies": {
     "cross-env": "^6.0.3",
     "express": "^4.17.1",
-    "scalable-form-server": "^0.0.1"
+    "scalable-form-server": "^0.0.2"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",

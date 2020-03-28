@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "通过ScalableFormEditor可视化编排表单",
   "homepage": "",
   "license": "MIT",
@@ -38,8 +38,8 @@
     "react-redux": "^4.4.8",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "scalable-form-antd": "^0.0.1",
-    "scalable-form-core": "^0.0.1"
+    "scalable-form-antd": "^0.0.2",
+    "scalable-form-core": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
