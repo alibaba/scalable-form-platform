@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "start-storybook",
+    "dev": "lerna run --parallel dev --scope scalable-form-sdk",
     "dev:server": "lerna run --parallel dev --scope scalable-form-server --scope scalable-form-admin",
     "dev:koa": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-koa --scope scalable-form-admin",
     "dev:express": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-express --scope scalable-form-admin",

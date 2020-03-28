@@ -60,17 +60,43 @@ const actionCreators = {
                 console.warn('[xform-editor]配置的locale属性值不在supportLangList中，将默认设置' + supportLangList[0] + '作为多语言设置的默认语言');
             }
         }
+        const getInitConfig = () => new Promise((resolve, reject) => {
+            if(env === 'dev'){
+                resolve({
+                      "systemTemplate": {
+                          "fields": []
+                      },
+                      "commonTemplate": {
+                          "fields": []
+                      },
+                      "attributeTemplate": {
+                          "fields": []
+                      },
+                      "optionTemplate": {
+                          "fields": []
+                      },
+                      "langs": [{
+                          "name": "English",
+                          "locale": "en",
+                          "enabled": true
+                      }],
+                      "defaultLang": "en"
+                  });
+            }else{
+                request.fetch(request.getInterface('getInitConfig', customInterfaces, env), {
+                    currentLang: locale,
+                    supportedLangs: supportLangList && supportLangList.join(','),
+                    bizCode,
+                    formCode,
+                    systemTemplate,
+                    commonTemplate,
+                    attributeTemplate,
+                    optionTemplate
+                }, customGateway, env).then(resolve).catch(reject);
+            }
+        });
         return (dispatch) => {
-            request.fetch(request.getInterface('getInitConfig', customInterfaces, env), {
-                currentLang: locale,
-                supportedLangs: supportLangList && supportLangList.join(','),
-                bizCode,
-                formCode,
-                systemTemplate,
-                commonTemplate,
-                attributeTemplate,
-                optionTemplate
-            }, customGateway, env).then((data) => {
+            getInitConfig().then((data) => {
                 if (systemFieldSupport) {
                     if (data && data.systemTemplate && data.systemTemplate.fields) {
                         dispatch({
@@ -357,7 +383,16 @@ const actionCreators = {
     fetchServerCodeList(params, messages) {
         const {customInterfaces, customGateway, namespace, env} = params;
         return (dispatch) => {
-            request.fetch(request.getInterface('getServerCheckListData', customInterfaces, env), {}, customGateway, env)
+            const getServerCheckListData = () => new Promise((resolve, reject) => {
+                if(env === 'dev'){
+                    resolve({
+                        "data": []
+                    });
+                }else{
+                    request.fetch(request.getInterface('getServerCheckListData', customInterfaces, env), {}, customGateway, env).then(resolve).catch(reject)
+                }
+            });
+            getServerCheckListData()
                 .then((data) => {
                     if (data && typeof data.data !== 'undefined' && data.data.length > 0) {
                         dispatch({
@@ -451,12 +486,21 @@ const actionCreators = {
     // 获取字段级配置数据源列表
     fetchFieldDataSourceList(params, messages) {
         const {customInterfaces, customGateway, namespace, env} = params;
+        const getFieldDataSourceList = () => new Promise((resolve, reject) => {
+           if(env === 'dev'){
+               resolve({
+                   "data": []
+               });
+           } else {
+               request.fetch(request.getInterface('dataSourceServerUrl', customInterfaces, env), {
+                   sourceCode: 'dataSourceList',
+                   params: {},
+                   stringifyParams: JSON.stringify({})
+               }, customGateway, env, {type: 'POST'}).then(resolve).catch(reject);
+           }
+        });
         return (dispatch) => {
-            request.fetch(request.getInterface('dataSourceServerUrl', customInterfaces, env), {
-                sourceCode: 'dataSourceList',
-                params: {},
-                stringifyParams: JSON.stringify({})
-            }, customGateway, env, {type: 'POST'}).then((data) => {
+            getFieldDataSourceList().then((data) => {
                 if (data && typeof data.data !== 'undefined' && data.data.length > 0) {
                     dispatch({
                         type: CONST.XFORM_BUILDER_GET_DATASOURCE,
@@ -497,13 +541,24 @@ const actionCreators = {
     fetchFormDataSourceList(params, messages) {
         const {customInterfaces, customGateway, namespace, env} = params;
         return (dispatch) => {
-            request.fetch(request.getInterface('getDataSourceListData', customInterfaces, env), {
-                pageNo: 1,
-                pageSize: 2000,
-                dataSourceParamJson: JSON.stringify({
-                    sourceTypeList: ['FORM_DATA']
-                })
-            }, customGateway, env, {type: 'POST'}).then((data) => {
+            const getDataSourceServerUrl = () => new Promise((resolve, reject) => {
+                if(env === 'dev'){
+                    resolve({
+                        "defaultValue": "dataSourceList",
+                        "help": "请选择对应的数据源，看看能不能更新上去",
+                        "data": []
+                    });
+                } else {
+                    request.fetch(request.getInterface('getDataSourceListData', customInterfaces, env), {
+                        pageNo: 1,
+                        pageSize: 2000,
+                        dataSourceParamJson: JSON.stringify({
+                            sourceTypeList: ['FORM_DATA']
+                        })
+                    }, customGateway, env, {type: 'POST'}).then(resolve).catch(reject);
+                }
+            });
+            getDataSourceServerUrl().then((data) => {
                 if (data && data.data && data.data.length > 0) {
                     dispatch({
                         type: CONST.XFORM_BUILDER_GET_FORM_DATASOURCE,
@@ -524,7 +579,7 @@ const actionCreators = {
                     });
                 }
             }).catch((error) => {
-                message.error(messages[getMessageId('actionCreatorsGetDataSourceErrorTip')] + error.message);
+                message.error('1' + messages[getMessageId('actionCreatorsGetDataSourceErrorTip')] + error.message);
                 // 如果出错，则默认传入“无数据源”配置项
                 dispatch({
                     type: CONST.XFORM_BUILDER_GET_FORM_DATASOURCE,

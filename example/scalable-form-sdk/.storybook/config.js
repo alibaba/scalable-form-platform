@@ -4,7 +4,7 @@ addParameters({
 });
 
 function loadStories() {
-  const req = require.context('../__stories__', true, /\.stories\.js$/);
+  const req = require.context('../src', true, /\.stories\.js$/);
   req.keys().forEach(filename => req(filename));
 }
 

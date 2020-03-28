@@ -3,10 +3,29 @@ module.exports = ({config, mode}) => {
     test: /\.less$/,
     loaders: ['style-loader', 'css-loader', 'less-loader'],
   });
+  config.module.rules.push({
+    test: /\.(js|jsx)$/,
+    use: {
+      loader: 'babel-loader?cacheDirectory',
+      options: {
+        presets: ["@babel/preset-env", "@babel/preset-react"],
+        plugins: [
+          ["@babel/plugin-proposal-class-properties", { "loose": false }]
+        ]
+      }
+    }
+  });
   // config.module.rules.push({
-  //   test: /\.stories\.js?$/,
-  //   loaders: [require.resolve('@storybook/source-loader')],
-  //   enforce: 'pre',
+  //   test: /\.(ts|tsx)$/,
+  //   use: {
+  //     loader: 'babel-loader?cacheDirectory',
+  //     options: {
+  //       presets: [['react-app', {flow: false, typescript: true}]],
+  //       plugins: [
+  //         ["@babel/plugin-proposal-decorators", {"legacy": true}]
+  //       ]
+  //     }
+  //   }
   // });
   config.output = {
     publicPath: '/',

@@ -705,18 +705,26 @@ class App extends PureComponent {
                     })
                 };
             }
-            request.fetch(request.getInterface('saveFieldsData', customInterfaces, env), submitParams, customGateway, env, {
-                type: 'POST'
-            }).then((data) => {
+            const saveFieldsData = () => new Promise((resolve, reject) => {
+                if(env === 'dev'){
+                    resolve({"formCode": "DEV_NEW"});
+                }else{
+                    request.fetch(request.getInterface('saveFieldsData', customInterfaces, env), submitParams, customGateway, env, {
+                        type: 'POST'
+                    }).then(resolve).catch(reject);
+                }
+            });
+            saveFieldsData().then((data) => {
                 // 新建表单，需要将formCode更新为当前创建的formCode
-                this.setState({
-                    formCode: data.formCode
-                }, () => {
-                    // 重新获取多语言配置
-                    this.refetchLangConfig({
+                if(data.formCode !== 'DEV_NEW'){
+                    this.setState({
                         formCode: data.formCode
+                    }, () => {
+                        this.refetchLangConfig({
+                            formCode: data.formCode
+                        });
                     });
-                });
+                }
                 if (typeof onSubmit === 'function') {
                     onSubmit(data.formCode, { jsonSchema, uiSchema, formData, bizData, sequence });
                 }

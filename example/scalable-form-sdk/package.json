@@ -1,0 +1,43 @@
+{
+  "name": "scalable-form-sdk",
+  "version": "0.0.1",
+  "description": "Scalable Form 前端demo",
+  "private": true,
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-use-server-sdk-with-egg",
+    "stop": "egg-scripts stop --title=egg-server-use-server-sdk-with-egg",
+    "dev": "start-storybook",
+    "build": "exit 0",
+    "publish": "exit 0",
+    "test": "exit 0;"
+  },
+  "dependencies": {
+    "scalable-form-editor": "0.0.1",
+    "scalable-form-antd-mobile": "0.0.1",
+    "scalable-form-core": "0.0.1",
+    "scalable-form-antd": "0.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/runtime": "^7.7.2"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "",
+  "license": "MIT"
+}
