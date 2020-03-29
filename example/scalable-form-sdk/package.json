@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Scalable Form 前端demo",
   "private": true,
   "scripts": {
@@ -12,10 +12,10 @@
     "test": "exit 0;"
   },
   "dependencies": {
-    "scalable-form-antd": "^0.0.3",
-    "scalable-form-antd-mobile": "^0.0.3",
-    "scalable-form-core": "^0.0.3",
-    "scalable-form-editor": "^0.0.3"
+    "scalable-form-antd": "^0.0.4",
+    "scalable-form-antd-mobile": "^0.0.4",
+    "scalable-form-core": "^0.0.4",
+    "scalable-form-editor": "^0.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
