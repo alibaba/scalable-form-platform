@@ -6,8 +6,11 @@ A solution for editing and publish dynamic web forms with visual editor, providi
 ![GitHub](https://img.shields.io/github/license/alibaba/scalable-form-platform?style=flat)
 ![npm](https://img.shields.io/npm/v/scalable-form-antd?color=blue&style=flat)
 ![Travis (.org)](https://api.travis-ci.com/alibaba/scalable-form-platform.svg?branch=daily%2F0.0.2)
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/alibaba/scalable-form-platform?style=flat)
 ![GitHub issues](https://img.shields.io/github/issues/alibaba/scalable-form-platform)
+
+查看文档 [https://scalable-form-platform.github.io/#/](https://scalable-form-platform.github.io/#/)
 
 <p align="center">
   <a href="https://scalable-form-platform.github.io/" target="_blank">
@@ -27,6 +30,10 @@ A solution for editing and publish dynamic web forms with visual editor, providi
 - 📦 A set of high-quality react components for rendering web forms from JSON schema out of the box
 - ⚙️ Whole package of development tools
 - 🗄 Server support and independently deployable sites
+
+<br />
+
+- 更多特性请查看文档 [https://scalable-form-platform.github.io/#/](https://scalable-form-platform.github.io/#/)
 
 ## 📦 包管理/Packages
 我们使用[Lerna](https://github.com/lerna/lerna)来进行包管理，所以本仓库会发布多个包到npm，包括：

@@ -75,7 +75,7 @@ export default class XFormAdmin extends React.PureComponent<any, State> {
                 <div className="right-wrapper">
                   <Menu className="nav-entries" theme="dark" mode="horizontal" style={{lineHeight: '64px'}}>
                     <MenuItem>
-                      <a target="_blank" href="https://yuque.antfin-inc.com/ppgy4h/mirror-form">文档</a>
+                      <a target="_blank" href="https://scalable-form-platform.github.io/">文档</a>
                     </MenuItem>
                   </Menu>
                   <div className="login-user-wrapper">

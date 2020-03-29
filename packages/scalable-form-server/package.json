@@ -19,19 +19,18 @@
   },
   "scripts": {
     "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'npm run dev:build && node ./build/standalone.js'",
-    "start": "cross-env NODE_ENV=production && npm run start:build && node ./build/standalone.js",
     "dev:build": "cross-env NODE_ENV=development webpack --config webpack.config.babel.js --colors",
-    "start:docker": "./standalone/docker.js -c ./etc/config.json",
-    "start:build": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js --colors",
-    "build": "npm run build:dir && npm run start:build && npm run build:copy",
-    "build:docker": "npm run start:build && ./build.sh",
+    "start": "exit 0;",
+    "build": "npm run build:dir && npm run build:pack && npm run build:copy",
     "build:dir": "rimraf ./build && mkdir build",
+    "build:pack": "cross-env NODE_ENV=production webpack --config webpack.config.babel.js --colors",
     "build:copy": "mkdir ../../dist/scalable-form-server && ls ./build/* && cp ./build/* ../../dist/scalable-form-server/",
-    "test": "jest --updateSnapshot --json --outputFile=jest-test-results.json --coverage",
-    "publish": "npm run build:dir && npm run start:build && node ./prepare.js && npm publish build"
+    "test": "exit 0;",
+    "publish": "npm run build:dir && npm run build:pack && node ./prepare.js && npm publish build"
   },
   "dependencies": {
     "@babel/runtime": "^7.7.2",
+    "@types/koa": "^2.11.3",
     "@types/mysql": "^2.15.7",
     "@types/redis": "^2.8.14",
     "chalk": "^3.0.0",

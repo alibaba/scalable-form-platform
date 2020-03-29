@@ -1,8 +1,23 @@
 {
   "name": "scalable-form-antd",
   "version": "0.0.3",
-  "description": "基于antd组件，渲染scalable-form表单",
-  "homepage": "",
+  "description": "A react component for rendering web forms from JSON schema using ant design components",
+  "homepage": "https://scalable-form-platform.github.io",
+  "keywords": [
+    "javascript",
+    "react",
+    "antd",
+    "ant-design",
+    "json-schema",
+    "form",
+    "ui",
+    "ui-components",
+    "json",
+    "solution",
+    "sdk"
+  ],
+  "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
+  "repository": "https://github.com/alibaba/scalable-form-platform",
   "license": "MIT",
   "main": "src/index.js",
   "typings": "src/index.js",
@@ -10,6 +25,13 @@
     "lib": "lib",
     "test": "__tests__"
   },
+  "author": {
+    "name": "alibaba"
+  },
+  "contributors": [
+    "吕舜 lvshun@live.cn",
+    "Ma Yongxin"
+  ],
   "files": [
     "src"
   ],
