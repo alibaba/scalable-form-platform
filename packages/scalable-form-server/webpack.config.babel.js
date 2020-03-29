@@ -23,9 +23,6 @@ const config = {
   entry: {
     'index': [
       path.resolve(__dirname, './src/index.ts')
-    ],
-    'standalone': [
-      path.resolve(__dirname, './standalone/index.ts')
     ]
   },
   output: {

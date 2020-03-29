@@ -12,7 +12,7 @@ function runExec(shell) {
   })
 }
 
-runExec('sed \'s#\"main\": \"src/index.js\"#\"main\": \"index.js\"#\' ./package.json > ./build/package1.json')
+runExec('sed \'s#\"main\": \"build/index.js\"#\"main\": \"index.js\"#\' ./package.json > ./build/package1.json')
   .then(() => {
     return runExec('sed \'s#\"prepublishOnly\"#\"prepublishOnly:not\"#\' ./build/package1.json > ./build/package2.json')
   })
@@ -22,4 +22,6 @@ runExec('sed \'s#\"main\": \"src/index.js\"#\"main\": \"index.js\"#\' ./package.
   .then(() => {
     return runExec('rm ./build/package1.json && rm ./build/package2.json')
   });
+
+runExec('cp README.md build/');
 
