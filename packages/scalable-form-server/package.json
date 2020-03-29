@@ -14,9 +14,6 @@
     "build",
     "standalone"
   ],
-  "bin": {
-    "xform": "./standalone/cli.js"
-  },
   "scripts": {
     "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'npm run dev:build && node ./build/standalone.js'",
     "dev:build": "cross-env NODE_ENV=development webpack --config webpack.config.babel.js --colors",
