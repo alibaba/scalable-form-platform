@@ -10,7 +10,7 @@
   },
   "npmClient": "npm",
   "packages": [
-    "example/scalable-form-sdk",
+    "example/*",
     "packages/*"
   ],
   "version": "0.0.6"
