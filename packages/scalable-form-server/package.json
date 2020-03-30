@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-server",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "description": "服务端sdk",
   "homepage": "",
   "license": "MIT",

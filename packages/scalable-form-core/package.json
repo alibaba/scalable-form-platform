@@ -1,8 +1,28 @@
 {
   "name": "scalable-form-core",
-  "version": "0.0.8",
-  "description": "ScalableFormCore是整个ScalableForm对JSONSchema协议的实现与扩展，只是对上述表单逻辑的抽象层，没有对相关UI的封装。",
-  "homepage": "",
+  "version": "0.0.11",
+  "description": "A react component for rendering web forms from JSON schema using HTML components",
+  "homepage": "https://scalable-form-platform.github.io",
+  "keywords": [
+    "javascript",
+    "react",
+    "json-schema",
+    "form",
+    "ui",
+    "ui-components",
+    "json",
+    "solution",
+    "sdk"
+  ],
+  "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
+  "repository": "https://github.com/alibaba/scalable-form-platform",
+  "author": {
+    "name": "alibaba"
+  },
+  "contributors": [
+    "吕舜 lvshun@live.cn",
+    "Ma Yongxin"
+  ],
   "license": "MIT",
   "main": "src/index.js",
   "typings": "src/index.tsx",

@@ -146,16 +146,8 @@ export default class FormAntdExample extends React.PureComponent {
 }
 ```
 
-### 在codesandbox演示
-这里查看第一个表单的例子在 codesandbox 的演示。
-
-<iframe
-     src="https://codesandbox.io/embed/late-bird-x6qoo?fontsize=14&hidenavigation=1&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="late-bird-x6qoo"
-     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-   ></iframe>
+### 查看更多文档
+您可以访问 [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/scalable_form_antd) 查看更多API文档
    
 ## 📦 包管理/Packages
 我们使用[Lerna](https://github.com/lerna/lerna)来进行包管理，所以本仓库会发布多个包到npm，包括：

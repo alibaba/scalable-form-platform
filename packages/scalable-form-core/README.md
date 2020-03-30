@@ -1,70 +1,160 @@
 # scalable-form-core
 
-## 简介
-scalable-form-core是整个ScalableFormSystem对JSONSchema协议的实现与扩展，它主要是在社区组件react-jsonschema-form进行功能的扩展，包括（数据源、校验器、级联等动态表单特性）。该组件只是对上述表单逻辑的抽象层，没有对相关UI的封装。通过scalable-form-core核心组件，你可以自己实现一个自定义UI的ScalableFormSystem渲染组件。
+基于动态表单协议（[JSON Schema](http://json-schema.org/)）的前端表单渲染引擎sdk，使用HTML原生components，仅处理联动等业务逻辑，不包含UI组件。
 
-## 引入方式
+A React component for rendering web forms from [JSON schema](http://json-schema.org/) using HTML components
+
+![GitHub](https://img.shields.io/github/license/alibaba/scalable-form-platform?style=flat)
+![npm](https://img.shields.io/npm/v/scalable-form-antd?color=blue&style=flat)
+![Travis (.org)](https://api.travis-ci.com/alibaba/scalable-form-platform.svg?branch=daily%2F0.0.2)
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/alibaba/scalable-form-platform?style=flat)
+![GitHub issues](https://img.shields.io/github/issues/alibaba/scalable-form-platform)
+ 
+查看文档 [https://scalable-form-platform.github.io/#/](https://scalable-form-platform.github.io/#/)
+
+<p align="center">
+  <a href="https://scalable-form-platform.github.io/" target="_blank">
+    <img max-width="1440" src="https://img.alicdn.com/tfs/TB1MnB9z7Y2gK0jSZFgXXc5OFXa-1440-900.png" />
+  </a>
+</p>
+
+## ✨ 特性/features
+- 🛳 企业级解决方案和高稳定性
+- 📦 开箱即用的动态表单渲染sdk
+- ⚙️ 完整的开发工具支持
+- 🗄 服务端支持和用于管理表单的可独立部署站点
+
+<br />
+
+- 🛳 Enterprise-class Solutions for web form
+- 📦 A set of high-quality react components for rendering web forms from JSON schema out of the box
+- ⚙️ Whole package of development tools
+- 🗄 Server support and independently deployable sites
+
+<br />
+
+- 更多特性请查看文档 [https://scalable-form-platform.github.io/#/](https://scalable-form-platform.github.io/#/)
+
+## 快速开始
+
+### 安装
+
+使用 npm 安装
+
+```bash
+npm i scalable-form-core -S
 ```
-npm install scalable-form-core -S
+
+如果你的网络环境不佳，推荐使用 [cnpm](https://developer.aliyun.com/mirror/NPM)。
+
+### 引入使用
+```javascript
+import ScalableForm from "scalable-form-core";
 ```
 
-## 组件属性与API
+### Hello World
+在第一个例子中，我们需要渲染一个表单，支持用户填写name，并自行选择所在城市。
+注意，scalable-form是一套基于表单数据协议（JSONSchema）的动态表单解决方案。所以我们需要按照[react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form)的规则书写一下表单规则描述（schema），并且将schema作为scalable-form的props转入组件。
+> 写这个schema会很繁琐，不过放心，scalable-form的一大创新点就在于支持使用可视化的编排组件editor编排产生这个schema，您可以[访问这里](https://scalable-form-platform.github.io/#/zh/%E4%BD%BF%E7%94%A8%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E8%BE%91%E5%99%A8)，查看editor的使用方法
 
-## 通过scalable-form-core实现自定义的渲染组件
-在scalable-form-core中是没有携带任何UI的（只是react-jsonschema-form默认的bootstrap风格的UI），所有与表单UI相关的内容完全需要渲染组件自己去实现。其中主要包括两个部分：
-1. 表单的布局。scalable-form-core默认的布局是字段100%纵向布局，如果需要支持复杂布局配置需要在渲染组件中自行实现
-2. 通用表单字段UI。下面列出来了目前在scalable-form-core渲染组件中实现的表单字段，其中大写字母开头的为react-jsonschema-form中内置实现的基础字段，小写字母开头的为扩展基础字段。对于小写字母开头的字段，如果未实现而表单中配置了这些字段就会出现渲染失败。
+```javascript
+import React from "react";
+import ScalableForm from "scalable-form-core";
+import "./styles.css";
 
-## Widgets属性中需要实现的组件列表
-### PC端组件：
-```
-{
-   treeSelect: [Your Component],    // 树选择器
-   multiTreeSelect: [Your Component],    // 树选择器（多选）
-   SelectWidget: [Your Component],    // 下拉列表
-   multiSelect: [Your Component],    // 下拉列表（多选）
-   suggestSelect: [Your Component],    // suggest下拉列表
-   TextWidget: [Your Component],    // 普通单行文本输入框
-   TextareaWidget: [Your Component],    // 普通多行文本输入框
-   UpDownWidget: [Your Component],    // 数字选择器
-   DateWidget: [Your Component],    // 日期选择器
-   DateTimeWidget: [Your Component],    // 日期时间选择器
-   dateRange: [Your Component],    // 日期范围选择器
-   RadioWidget: [Your Component],    // 普通单选
-   CheckboxesWidget: [Your Component],    // 普通复选
-   CheckboxWidget: [Your Component],    // 单项复选
-   FileWidget: [Your Component],    // 文件/图片上传
-   tag: [Your Component],    // 标签选择
-   label: [Your Component],    // 普通文本
-   richtext: [Your Component],    // 富文本
-   rate: [Your Component],    // 评分
-   cascader: [Your Component],    // 级联下拉框
-   slider: [Your Component],    // 滑动选择器
-   sliderRange: [Your Component],    // 滑动范围选择器
-   switch: [Your Component]    // 开关选择器
+export default class FormExample extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formData: {
+        name: "",
+        city: "hangzhou"
+      }
+    };
+    this.jsonSchema = {
+      title: "Scalable Form render sdk with Ant Design components",
+      description: "",
+      type: "object",
+      required: ["name"],
+      properties: {
+        name: {
+          type: "string",
+          title: "名称",
+          default: "",
+          maxLength: 15
+        },
+        city: {
+          type: "string",
+          title: "请选择城市",
+          default: "",
+          enum: ["beijing", "shanghai", "hangzhou"],
+          enumNames: ["北京", "上海", "杭州"]
+        }
+      }
+    };
+    this.uiSchema = {
+      name: {
+        "ui:help": '关于"名称"字段的帮助说明',
+        "ui:options": {
+          placeholder: "请输入名称"
+        }
+      },
+      city: {
+        "ui:widget": "radio",
+        "ui:options": {
+          vertical: false,
+          validate: [
+            {
+              type: "empty",
+              message: "请选择"
+            }
+          ]
+        }
+      }
+    };
+  }
+
+  handleChanged = (formData, bizData) => {
+    console.log("ScalableForm Changed!", formData);
+    console.log("ScalableForm Changed!", bizData);
+    this.setState({
+      formData: { ...formData }
+    });
+  };
+
+  handleSubmit = (formData, bizData) => {
+    console.log("ScalableForm Submitted!", formData);
+    console.log("ScalableForm Submitted!", bizData);
+  };
+
+  render() {
+    return (
+      <div className="scalable-form-demo-element">
+        <ScalableForm
+          jsonSchema={this.jsonSchema} //jsonSchema用于表述表单字段信息
+          uiSchema={this.uiSchema} //uiSchema用于控制表单字段的UI组件
+          formData={this.state.formData} //formData是表单中填写的字段数据
+          onChange={this.handleChanged}
+          onSubmit={this.handleSubmit}
+        />
+      </div>
+    );
+  }
 }
 ```
 
-###移动端组件：
-```
-{
-   treeSelect: [Your Component],    // 树选择器
-   label: [Your Component],    // 普通文本
-   dateRange: [Your Component],    // 日期范围选择器
-   multiSelect: [Your Component],    // 下拉选择（多选）
-   UpDownWidget: [Your Component],    // 数字选择
-   SelectWidget: [Your Component],    // 下拉选择
-   TextWidget: [Your Component],    // 普通单行文本输入框
-   TextareaWidget: [Your Component],    // 普通多行文本输入框
-   DateWidget: [Your Component],    // 日期选择器
-   DateTimeWidget: [Your Component],    // 日期时间选择器
-   RadioWidget: [Your Component],    // 单选
-   CheckboxesWidget: [Your Component],    // Switch开关选择
-   CheckboxWidget: [Your Component],    // 复选
-   FileWidget: [Your Component],    // 图片上传
-   cascader: [Your Component],    // 级联下拉框
-   slider: [Your Component],    // 滑动选择器
-   sliderRange: [Your Component],    // 滑动范围选择器
-   switch: [Your Component]    // Switch开关选择器（移动端这两个组件相同）
-}
-```
+### 查看更多文档
+您可以访问 [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/scalable_form_core) 查看更多API文档
+   
+## 📦 包管理/Packages
+我们使用[Lerna](https://github.com/lerna/lerna)来进行包管理，所以本仓库会发布多个包到npm，包括：
+
+This repository is a monorepo that we manage using [Lerna](https://github.com/lerna/lerna). That means that we actually publish several packages to npm from the same codebase, including:
+
+|  Package | NPMVersions  | Documents  | Description  |
+|  ----  | ----  | ----  | ----  |
+| scalable-form-antd  | [![npm](https://img.shields.io/npm/v/scalable-form-antd.svg?color=blue&style=flat)](https://www.npmjs.com/package/scalable-form-antd) | [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/scalable_form_antd) | 基于react-jsonschema-form，结合ant-design的动态表单渲染sdk |
+| scalable-form-antd-mobile  | [![npm](https://img.shields.io/npm/v/scalable-form-antd-mobile.svg?color=blue&style=flat)](https://www.npmjs.com/package/scalable-form-antd-mobile)|[![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/scalable_form_antd_mobile)| 基于react-jsonschema-form，结合ant-design-mobile的动态表单渲染sdk，适用于移动端的渲染sdk |
+| scalable-form-editor  | [![npm](https://img.shields.io/npm/v/scalable-form-editor.svg?color=blue&style=flat)](https://www.npmjs.com/package/scalable-form-editor) | [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/scalable-form-editor)| 表单可视化编辑器，可视化编排表单，产出scalable-form-antd和scalable-form-antd-mobile可用的schema |
+| scalable-form-server  | [![npm](https://img.shields.io/npm/v/scalable-form-server.svg?color=blue&style=flat)](https://www.npmjs.com/package/scalable-form-server) | [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/%E4%BD%BF%E7%94%A8Node)| 服务端sdk，用户可以基于scalable-form-server保存表单配置。服务端sdk提供一个可用的表单站点，提供表单编排，表单管理，表单投放，数据回流分析的能力。 |

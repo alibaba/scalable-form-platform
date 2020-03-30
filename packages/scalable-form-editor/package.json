@@ -1,11 +1,33 @@
 {
   "name": "scalable-form-editor",
-  "version": "0.0.8",
-  "description": "通过ScalableFormEditor可视化编排表单",
-  "homepage": "",
+  "version": "0.0.11",
+  "description": "A visual editor component to edit dynamic form json schema used by scalable-form-platform",
+  "homepage": "https://scalable-form-platform.github.io",
+  "keywords": [
+    "javascript",
+    "react",
+    "antd",
+    "ant-design",
+    "json-schema",
+    "form",
+    "ui",
+    "ui-components",
+    "json",
+    "solution",
+    "sdk"
+  ],
+  "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
+  "repository": "https://github.com/alibaba/scalable-form-platform",
   "license": "MIT",
   "main": "src/index.js",
   "typings": "src/index.js",
+  "author": {
+    "name": "alibaba"
+  },
+  "contributors": [
+    "吕舜 lvshun@live.cn",
+    "Ma Yongxin"
+  ],
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -38,8 +60,8 @@
     "react-redux": "^4.4.8",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "scalable-form-antd": "^0.0.8",
-    "scalable-form-core": "^0.0.8"
+    "scalable-form-antd": "^0.0.11",
+    "scalable-form-core": "^0.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

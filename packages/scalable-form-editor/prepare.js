@@ -22,4 +22,4 @@ runExec('sed \'s#\"main\": \"src/index.js\"#\"main\": \"index.js\"#\' ./package.
   .then(() => {
     return runExec('rm ./build/package1.json && rm ./build/package2.json')
   });
-
+runExec('cp README.md build/');
