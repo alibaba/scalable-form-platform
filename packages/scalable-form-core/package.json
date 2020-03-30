@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-core",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "ScalableFormCore是整个ScalableForm对JSONSchema协议的实现与扩展，只是对上述表单逻辑的抽象层，没有对相关UI的封装。",
   "homepage": "",
   "license": "MIT",
