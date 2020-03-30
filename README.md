@@ -5,6 +5,7 @@ A solution for editing and publish dynamic web forms with visual editor, providi
 
 ![GitHub](https://img.shields.io/github/license/alibaba/scalable-form-platform?style=flat)
 ![npm](https://img.shields.io/npm/v/scalable-form-antd?color=blue&style=flat)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/lvshuncn/scalable-form-platform)](https://hub.docker.com/r/lvshuncn/scalable-form-platform)
 ![Travis (.org)](https://api.travis-ci.com/alibaba/scalable-form-platform.svg?branch=daily%2F0.0.2)
 ![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/alibaba/scalable-form-platform?style=flat)
