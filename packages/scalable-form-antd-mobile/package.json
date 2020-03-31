@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-antd-mobile",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A react component for rendering web forms in mobile browser from JSON schema using ant design mobile components",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
@@ -57,7 +57,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-if": "^2.2.1",
-    "scalable-form-core": "^0.0.11"
+    "scalable-form-core": "^0.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

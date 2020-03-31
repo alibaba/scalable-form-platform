@@ -1,8 +1,26 @@
 {
   "name": "scalable-form-server",
-  "version": "0.0.11",
-  "description": "服务端sdk",
-  "homepage": "",
+  "version": "0.0.12",
+  "description": "Scalable Form server sdk, providing koa/express middleware to apply Scalable Form web site",
+  "homepage": "https://scalable-form-platform.github.io",
+  "keywords": [
+    "javascript",
+    "react",
+    "antd",
+    "ant-design",
+    "json-schema",
+    "form",
+    "ui",
+    "ui-components",
+    "json",
+    "solution",
+    "sdk",
+    "koa",
+    "express",
+    "egg"
+  ],
+  "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
+  "repository": "https://github.com/alibaba/scalable-form-platform",
   "license": "MIT",
   "main": "build/index.js",
   "typings": "build/index.js",
@@ -10,6 +28,13 @@
     "lib": "lib",
     "test": "__tests__"
   },
+  "author": {
+    "name": "alibaba"
+  },
+  "contributors": [
+    "吕舜 lvshun@live.cn",
+    "Ma Yongxin"
+  ],
   "files": [
     "build",
     "standalone"

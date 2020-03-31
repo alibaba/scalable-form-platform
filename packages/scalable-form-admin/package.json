@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-admin",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Scalable Form站点",
   "homepage": "",
   "license": "MIT",
@@ -45,10 +45,10 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "scalable-form-antd": "^0.0.11",
-    "scalable-form-antd-mobile": "^0.0.11",
-    "scalable-form-core": "^0.0.11",
-    "scalable-form-editor": "^0.0.11"
+    "scalable-form-antd": "^0.0.12",
+    "scalable-form-antd-mobile": "^0.0.12",
+    "scalable-form-core": "^0.0.12",
+    "scalable-form-editor": "^0.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
