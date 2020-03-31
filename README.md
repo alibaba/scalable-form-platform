@@ -58,7 +58,7 @@ npm i scalable-form-antd -S
 ```
 
 使用scalable-form-antd，我们需要针对表单需求写一下表单描述（schema），并且将schema作为scalable-form-antd的props传入。
-> 写这个schema会很繁琐，不过放心，Scalable Form的一大创新就是支持使用可视化的编排组件 [scalable-form-editor](https://www.npmjs.com/package/scalable-form-editor) 来搭建生成这个schema，下文中，您会了解如何使用这个editor。
+> 您可能觉得写这个schema很繁琐，不过放心，Scalable Form的一大创新就是支持使用可视化的编排组件 [scalable-form-editor](https://www.npmjs.com/package/scalable-form-editor) 来搭建生成这个schema，完全不需要您手动书写，下文中，您会了解如何使用这个editor。
 
 ```jsx harmony
 import React from "react";
@@ -102,6 +102,7 @@ export default class FormExample extends React.PureComponent {
     };
   }
 
+  // 用户输入表单数据变化时的回调，会返回用户当前填写的表单数据formData
   handleChanged = (formData) => {
     console.log("ScalableForm Changed!", formData);
     this.setState({
@@ -109,6 +110,7 @@ export default class FormExample extends React.PureComponent {
     });
   };
 
+  // 用户点击提交时的回调，会返回用户填写的表单数据formData
   handleSubmit = (formData) => {
     console.log("ScalableForm Submitted!", formData);
   };
@@ -119,7 +121,7 @@ export default class FormExample extends React.PureComponent {
         <ScalableForm
           jsonSchema={this.jsonSchema}
           uiSchema={this.uiSchema}
-          formData={this.state.formData} //formData是用户表单中实际填写的字段数据
+          formData={this.state.formData}
           onChange={this.handleChanged}
           onSubmit={this.handleSubmit}
         />
@@ -132,9 +134,11 @@ export default class FormExample extends React.PureComponent {
 您可以在 [codesandbox](https://codesandbox.io/s/late-bird-xform-antd-x6qoo?from-embed) 查看这个例子的演示。<br />
 您可以访问访问[scalable-form-antd文档](https://scalable-form-platform.github.io/#/zh/scalable_form_antd)了解更多信息
    
-<img src="https://img.alicdn.com/tfs/TB1dJ9Uz1H2gK0jSZFEXXcqMpXa-803-559.png" style="width: 400px;margin-top: 20px;/* float: right; *//* padding-left: 20px; */display: block;margin-left: auto;margin-right: auto;" />
+<img src="https://img.alicdn.com/tfs/TB1kDsPAeH2gK0jSZJnXXaT1FXa-2554-696.png" />
 
 > 您也可以使用[scalable-form-antd-mobile](https://www.npmjs.com/package/scalable-form-antd-mobile)在移动端渲染表单，[点击这里](https://codesandbox.io/s/late-bird-xform-antd-mobile-qspcg)在codesandbox中查看移动端渲染表单的例子，您也可以[在这里](https://scalable-form-platform.github.io/#/zh/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B8%B2%E6%9F%93)查看更多scalable-form-antd-mobile的文档。
+
+
 
 ### 使用scalable-form-editor可视化编排表单
 ```bash
@@ -180,6 +184,8 @@ class FormEditorExample extends Component {
 您可以在 [codesandbox](https://codesandbox.io/s/late-bird-xform-antd-x6qoo?from-embed) 查看scalable-form-editor的演示，[访问这里](https://scalable-form-platform.github.io/#/zh/scalable-form-editor)查看scalable-form-editor的更多文档
 
 ![](https://img.alicdn.com/tfs/TB1m6eUz4v1gK0jSZFFXXb0sXXa-2874-1486.png)
+
+
 
 ### 使用Scalable Form站点
 实际业务使用中，Scalable Form整体上由三个主要部分组成，表单渲染端，表单配置端，表单存储的服务端。
