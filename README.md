@@ -48,25 +48,24 @@ This repository is a monorepo that we manage using [Lerna](https://github.com/le
 | scalable-form-editor  | [![npm](https://img.shields.io/npm/v/scalable-form-editor.svg?color=blue&style=flat)](https://www.npmjs.com/package/scalable-form-editor) | [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/scalable-form-editor)| 表单可视化编辑器，可视化编排表单，产出scalable-form-antd和scalable-form-antd-mobile可用的schema |
 | scalable-form-server  | [![npm](https://img.shields.io/npm/v/scalable-form-server.svg?color=blue&style=flat)](https://www.npmjs.com/package/scalable-form-server) | [![](https://img.shields.io/badge/API%20Docs-site-green.svg?style=flat)](https://scalable-form-platform.github.io/#/zh/%E4%BD%BF%E7%94%A8Node)| 服务端sdk，用户可以基于scalable-form-server保存表单配置。服务端sdk提供一个可用的表单站点，提供表单编排，表单管理，表单投放，数据回流分析的能力。 |
 
-## ⛳️ 快速开始
-如何通过Scalable Form渲染一个动态表单呢。
-这里，我们向您展示一个例子。在这个例子中，我们会渲染一个表单，表单支持用户填写自己的名字（name字段）。
+## ⛳️ 快速上手
+我们从一个例子快速开始，在这个例子中，我们会渲染一个表单，表单支持用户填写自己的名字（name字段）。
 
-### 🎾 使用scalable-form-antd渲染表单
-> [scalable-form-antd](https://www.npmjs.com/package/scalable-form-antd)使用ant-design组件，根据表单数据协议（JSONSchema）渲染表单。
+### 使用scalable-form-antd渲染表单
+> [scalable-form-antd](https://www.npmjs.com/package/scalable-form-antd)会根据表单描述协议（JSONSchema），使用ant-design组件渲染表单。
 ```bash
-npm i scalable-form-antd -S //先安装
+npm i scalable-form-antd -S
 ```
 
-Scalable Form是一套基于表单数据协议（JSONSchema）的动态表单解决方案。所以我们需要写一下表单规则描述（schema），并且将schema作为scalable-form-antd的props传入。
-> 写这个schema会很繁琐，不过放心，Scalable Form的一大创新就是支持使用可视化的编排组件[scalable-form-editor](https://www.npmjs.com/package/scalable-form-editor)编排产生这个schema，继续看，您会了解如何使用这个editor
+使用scalable-form-antd，我们需要针对表单需求写一下表单描述（schema），并且将schema作为scalable-form-antd的props传入。
+> 写这个schema会很繁琐，不过放心，Scalable Form的一大创新就是支持使用可视化的编排组件 [scalable-form-editor](https://www.npmjs.com/package/scalable-form-editor) 来搭建生成这个schema，下文中，您会了解如何使用这个editor。
 
 ```jsx harmony
-// 这个例子，使用scalable-form-antd渲染了一个表单
 import React from "react";
 import "./styles.css";
 import ScalableForm from "scalable-form-antd";
 
+// 这个例子，使用scalable-form-antd渲染了一个表单
 export default class FormExample extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -75,6 +74,7 @@ export default class FormExample extends React.PureComponent {
         name: ""
       }
     };
+
     // 规则jsonSchema，用于描述表单字段信息，包括字段类型，长度等
     this.jsonSchema = {
       title: "Scalable Form render sdk with Ant Design components",
@@ -90,6 +90,7 @@ export default class FormExample extends React.PureComponent {
         }
       }
     };
+
     // 规则uiSchema，用于描述表单UI组件信息，包括输入框的placeholder等字段
     this.uiSchema = {
       name: {
@@ -116,9 +117,9 @@ export default class FormExample extends React.PureComponent {
     return (
       <div className="scalable-form-demo-element">
         <ScalableForm
-          jsonSchema={this.jsonSchema} //jsonSchema用于表述表单字段信息
-          uiSchema={this.uiSchema} //uiSchema用于控制表单字段的UI组件
-          formData={this.state.formData} //formData是表单中填写的字段数据
+          jsonSchema={this.jsonSchema}
+          uiSchema={this.uiSchema}
+          formData={this.state.formData} //formData是用户表单中实际填写的字段数据
           onChange={this.handleChanged}
           onSubmit={this.handleSubmit}
         />
@@ -128,19 +129,14 @@ export default class FormExample extends React.PureComponent {
 }
 ```
 
-查看第一个表单的例子在 [codesandbox](https://codesandbox.io/s/late-bird-xform-antd-x6qoo?from-embed) 的演示，您可以访问查看[scalable-form-antd](https://scalable-form-platform.github.io/#/zh/scalable_form_antd)的更多信息
-
-<iframe
-     src="https://codesandbox.io/embed/late-bird-x6qoo?fontsize=14&hidenavigation=1&theme=dark&hidenavigation=1&theme=dark&view=preview"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="late-bird-x6qoo"
-     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-   ></iframe>
+您可以在 [codesandbox](https://codesandbox.io/s/late-bird-xform-antd-x6qoo?from-embed) 查看这个例子的演示。<br />
+您可以访问访问[scalable-form-antd文档](https://scalable-form-platform.github.io/#/zh/scalable_form_antd)了解更多信息
    
-使用scalable-form-antd-mobile，我们还可以支持移动端表单渲染，[点击这里查看更多介绍](https://scalable-form-platform.github.io/#/zh/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B8%B2%E6%9F%93)
+<img src="https://img.alicdn.com/tfs/TB1dJ9Uz1H2gK0jSZFEXXcqMpXa-803-559.png" style="width: 400px;margin-top: 20px;/* float: right; *//* padding-left: 20px; */display: block;margin-left: auto;margin-right: auto;" />
 
-### 🏈 使用scalable-form-editor可视化编排表单
+> 您也可以使用[scalable-form-antd-mobile](https://www.npmjs.com/package/scalable-form-antd-mobile)在移动端渲染表单，[点击这里](https://codesandbox.io/s/late-bird-xform-antd-mobile-qspcg)在codesandbox中查看移动端渲染表单的例子，您也可以[在这里](https://scalable-form-platform.github.io/#/zh/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B8%B2%E6%9F%93)查看更多scalable-form-antd-mobile的文档。
+
+### 使用scalable-form-editor可视化编排表单
 ```bash
 npm i scalable-form-editor -S
 ```
@@ -181,16 +177,9 @@ class FormEditorExample extends Component {
 }
 ```
 
-在 [codesandbox](https://codesandbox.io/s/late-bird-xform-antd-x6qoo?from-embed) 查看scalable-form-editor的演示，您可以访问查看[scalable-form-editor](https://scalable-form-platform.github.io/#/zh/scalable-form-editor)的更多文档
+您可以在 [codesandbox](https://codesandbox.io/s/late-bird-xform-antd-x6qoo?from-embed) 查看scalable-form-editor的演示，[访问这里](https://scalable-form-platform.github.io/#/zh/scalable-form-editor)查看scalable-form-editor的更多文档
 
-<iframe
-     src="https://codesandbox.io/embed/late-bird-xform-antd-mobile-fz9m4?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="late-bird-xform-editor"
-     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-   ></iframe>
-
+![](https://img.alicdn.com/tfs/TB1m6eUz4v1gK0jSZFFXXb0sXXa-2874-1486.png)
 
 ### 使用Scalable Form站点
 实际业务使用中，Scalable Form整体上由三个主要部分组成，表单渲染端，表单配置端，表单存储的服务端。
