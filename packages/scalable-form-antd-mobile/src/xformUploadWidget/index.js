@@ -271,6 +271,7 @@ export default class CustomUploadWidget extends Component {
                                     const url = files[index].url;
                                     this.handleImagePreview(url);
                                 }}
+                                {...options}
                             />
                         )}
                     />
@@ -313,7 +314,6 @@ export default class CustomUploadWidget extends Component {
                     <ListItem
                         extra={(
                             <ImagePicker
-                                {...options}
                                 files={files}
                                 selectable={files.length < maxFileNum && !disabled && !readonly}
                                 multiple
@@ -327,6 +327,7 @@ export default class CustomUploadWidget extends Component {
                                     const url = files[index].url;
                                     this.handleImagePreview(url);
                                 }}
+                                {...options}
                             />
                         )}
                     />
