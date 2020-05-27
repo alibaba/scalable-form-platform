@@ -8,7 +8,7 @@
     "dev:koa": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-koa --scope scalable-form-admin",
     "dev:express": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-express --scope scalable-form-admin",
     "dev:egg": "lerna run --parallel dev --scope scalable-form-use-server-sdk-with-egg --scope scalable-form-admin",
-    "postinstall": "lerna bootstrap --hoist && lerna exec --parallel npm install --scope scalable-form-server",
+    "postinstall": "lerna bootstrap --hoist",
     "prebuild": "node_modules/.bin/rimraf ./dist && mkdir dist",
     "build": "lerna run --parallel build",
     "build:storybook": "build-storybook -c .storybook -o ./dist",

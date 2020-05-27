@@ -313,6 +313,7 @@ export default class CustomUploadWidget extends Component {
                     <ListItem
                         extra={(
                             <ImagePicker
+                                {...options}
                                 files={files}
                                 selectable={files.length < maxFileNum && !disabled && !readonly}
                                 multiple
