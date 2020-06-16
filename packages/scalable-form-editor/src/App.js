@@ -170,7 +170,7 @@ class App extends PureComponent {
         this.renderDefaultActionButtons = this.renderDefaultActionButtons.bind(this);
 
         this.state = {
-            fullscreen: false,  /* 全屏模式 */
+            fullscreen: props.fullscreen || false,  /* 全屏模式 */
             fieldConfigDrawerVisible: false,
             formCode,
             formSchemaModalVisible: false,

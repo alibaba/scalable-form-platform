@@ -16,6 +16,7 @@ import customFieldSchema from '../../customFieldSchema/index';
 import {util} from '../../common/util';
 import CommonFieldOption from './commonFieldOption';
 import CustomFieldOption from './customFieldOption';
+import './index.less';
 
 const {Search} = Input;
 

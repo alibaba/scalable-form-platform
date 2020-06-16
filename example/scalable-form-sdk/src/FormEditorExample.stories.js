@@ -150,6 +150,8 @@ class FormEditorExample extends Component {
   render() {
     return (
       <SchemaEditor
+        fullscreen={true}
+        platformConfigSupport
         jsonSchema={this.state.formSchema.jsonSchema}
         uiSchema={this.state.formSchema.uiSchema}
         formData={this.state.formSchema.formData}

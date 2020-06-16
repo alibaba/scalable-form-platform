@@ -4,84 +4,104 @@
 
 @import "../../common/variable.less";
 
-.app-xform-builder-field-picker-wrapper {
+.app-xform-builder {
 
-    .field-search-box {
-        padding: 8px 13px;
-        .ant-input-suffix {
-            right: 20px;
-        }
+  .preview-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .field-search-box {
+    padding: 8px 13px;
+
+    .ant-input-suffix {
+      right: 20px;
     }
-    .common-field-template, .custom-field-template {
-        border-bottom: 1px solid @default-border-color;
-        .field-panel {
-            height: 40px;
-            padding: 10px 16px;
-            color: @default-first-class-font-color;
-            cursor: pointer;
-            .icon {
-                font-size: 12px;
-                margin-right: 10px;
-                display: inline-block;
-            }
-            .template-title {
-                line-height: 20px;
-                margin-bottom: 12px;
-                font-size: 14px;
-                font-weight: 500;
-            }
+  }
 
-            &.fold {
-                .icon {
-                    transform: rotate(270deg);
-                }
-            }
-        }
-        .template-list {
-            li {
-                color: @default-second-class-font-color;
-                height: 40px;
-                cursor: pointer;
-                .list-item {
-                    padding: 10px 0;
-                    margin: 0 16px;
-                    white-space: nowrap;
-                    border-bottom: 1px solid @default-border-color;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    font-size: 13px;
-                    line-height: 20px;
-                    height: 40px;
-                    .template-icon {
-                        margin-right: 10px;
-                        font-size: 13px;
-                        vertical-align: middle;
-                    }
-                }
-                &:last-child {
-                    .list-item {
-                        border-bottom: none;
-                    }
-                }
+  .common-field-template, .custom-field-template {
+    border-bottom: 1px solid @default-border-color;
 
-                &:hover {
-                    background: @default-hover-bg-color;
-                }
-            }
+    .field-panel {
+      height: 40px;
+      padding: 10px 16px;
+      color: @default-first-class-font-color;
+      cursor: pointer;
+
+      .icon {
+        font-size: 12px;
+        margin-right: 10px;
+        display: inline-block;
+      }
+
+      .template-title {
+        line-height: 20px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      &.fold {
+        .icon {
+          transform: rotate(270deg);
         }
+      }
     }
-    .empty-box {
-        text-align: center;
-        margin-top: 50%;
-        color: @default-third-class-font-color;
-        padding: 10px 0;
-        .empty-icon {
-            font-size: 20px;
+
+    .template-list {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        color: @default-second-class-font-color;
+        height: 40px;
+        cursor: pointer;
+
+        .list-item {
+          padding: 10px 0;
+          margin: 0 16px;
+          white-space: nowrap;
+          border-bottom: 1px solid @default-border-color;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 13px;
+          line-height: 20px;
+          height: 40px;
+
+          .template-icon {
             margin-right: 10px;
+            font-size: 13px;
             vertical-align: middle;
+          }
         }
-        .empty-tip {
-            font-size: 12px;
+
+        &:last-child {
+          .list-item {
+            border-bottom: none;
+          }
         }
+
+        &:hover {
+          background: @default-hover-bg-color;
+        }
+      }
     }
+  }
+
+  .empty-box {
+    text-align: center;
+    margin-top: 50%;
+    color: @default-third-class-font-color;
+    padding: 10px 0;
+
+    .empty-icon {
+      font-size: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .empty-tip {
+      font-size: 12px;
+    }
+  }
 }

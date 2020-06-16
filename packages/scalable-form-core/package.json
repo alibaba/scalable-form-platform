@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-core",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A react component for rendering web forms from JSON schema using HTML components",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
