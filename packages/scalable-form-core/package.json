@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-core",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A react component for rendering web forms from JSON schema using HTML components",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
@@ -24,7 +24,7 @@
     "Ma Yongxin"
   ],
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "typings": "src/index.tsx",
   "directories": {
     "lib": "lib",
@@ -45,12 +45,10 @@
     "build:copy": "mkdir ../../dist/scalable-form-core && ls ./build/* && cp ./build/* ../../dist/scalable-form-core/"
   },
   "dependencies": {
-    "natty-fetch": "^2.5.3",
-    "prop-types": "^15.6.0",
+    "@rjsf/core": "2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-if": "^2.2.1",
-    "react-jsonschema-form": "^1.0.0"
+    "react-is": "16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -58,12 +56,14 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
     "@babel/runtime": "^7.7.2",
+    "@types/json-schema": "^7.0.4",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.3",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "6.6.0",
     "eslint-loader": "3.0.2",
     "eslint-plugin-react": "7.16.0",
@@ -75,7 +75,7 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.js?$": "babel-jest"
+      "^.+\\.(js|jsx|ts|tsx)?$": "babel-jest"
     },
     "verbose": true,
     "collectCoverage": true,
@@ -85,11 +85,16 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "testRegex": "((\\.|/)(test|spec))\\.js?$",
+    "coveragePathIgnorePatterns": [
+      "/src/model/",
+      "/src/types.ts"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",
-      "jsx"
+      "jsx",
+      "ts",
+      "tsx"
     ],
     "moduleNameMapper": {
       "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "<rootDir>/test/EmptyModule"
