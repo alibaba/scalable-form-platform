@@ -1,0 +1,7 @@
+scripts/
+test/
+demo/
+node_modules/
+packages/scalable-form-antd-mobile/i18n
+packages/scalable-form-admin
+packages/scalable-form-server

@@ -1,5 +1,8 @@
 {
   "command": {
+    "bootstrap": {
+      "hoist": true
+    },
     "version": {
       "allowBranch": [
         "master",
@@ -8,10 +11,11 @@
       ]
     }
   },
-  "npmClient": "npm",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "packages": [
     "example/*",
     "packages/*"
   ],
-  "version": "1.0.0"
+  "version": "0.2.0"
 }

@@ -1,3 +1,4 @@
+// TODO 使用ts来执行吧
 const exec = require('child_process').exec;
 
 function runExec(shell) {
