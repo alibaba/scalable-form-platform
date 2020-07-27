@@ -1,21 +1,21 @@
 {
   "name": "scalable-form-sdk",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Scalable Form 前端demo",
   "private": true,
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-use-server-sdk-with-egg",
-    "stop": "egg-scripts stop --title=egg-server-use-server-sdk-with-egg",
+    "start": "exit 0",
+    "stop": "exit 0",
     "dev": "start-storybook",
     "build": "exit 0",
     "publish": "exit 0",
     "test": "exit 0;"
   },
   "dependencies": {
-    "scalable-form-antd": "^1.0.0",
-    "scalable-form-antd-mobile": "^1.0.0",
-    "scalable-form-core": "^1.0.0",
-    "scalable-form-editor": "^1.0.0"
+    "scalable-form-antd": "^0.2.0",
+    "scalable-form-antd-mobile": "^0.2.0",
+    "scalable-form-core": "^0.2.0",
+    "scalable-form-editor": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
