@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-antd",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A react component for rendering web forms from JSON schema using ant design components",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
@@ -19,8 +19,8 @@
   "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
   "repository": "https://github.com/alibaba/scalable-form-platform",
   "license": "MIT",
-  "main": "src/index.js",
-  "typings": "src/index.js",
+  "main": "src/index.tsx",
+  "typings": "src/index.tsx",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -47,17 +47,16 @@
     "build:copy": "mkdir ../../dist/scalable-form-antd && ls ./build/* && cp ./build/* ../../dist/scalable-form-antd/"
   },
   "dependencies": {
-    "antd": "^3.24.2",
+    "@rjsf/core": "2.0.1",
+    "antd": "^4.1.4",
     "classnames": "^2.2.6",
-    "merge": "^1.2.0",
     "moment": "^2.24.0",
-    "natty-fetch": "^2.5.3",
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-if": "^2.2.1",
     "react-quill": "^1.3.3",
-    "scalable-form-core": "^1.0.0"
+    "scalable-form-core": "^0.2.0",
+    "scalable-form-tools": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
