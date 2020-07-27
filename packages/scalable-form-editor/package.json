@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-editor",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A visual editor component to edit dynamic form json schema used by scalable-form-platform",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
@@ -19,8 +19,8 @@
   "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
   "repository": "https://github.com/alibaba/scalable-form-platform",
   "license": "MIT",
-  "main": "src/index.js",
-  "typings": "src/index.js",
+  "main": "src/index.tsx",
+  "typings": "src/index.tsx",
   "author": {
     "name": "alibaba"
   },
@@ -47,21 +47,20 @@
     "build:copy": "mkdir ../../dist/scalable-form-editor && ls ./build/* && cp ./build/* ../../dist/scalable-form-editor/"
   },
   "dependencies": {
-    "antd": "^3.24.2",
+    "@rjsf/core": "2.0.1",
+    "@types/json-schema": "^7.0.4",
+    "antd": "^4.1.4",
     "classnames": "^2.2.6",
-    "natty-fetch": "^2.5.3",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.15",
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
-    "react-copy-to-clipboard": "^5.0.1",
-    "react-dnd": "^2.4.0",
-    "react-dnd-html5-backend": "^2.4.1",
+    "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.8.6",
-    "react-if": "^2.2.1",
-    "react-redux": "^4.4.8",
-    "redux": "^4.0.4",
-    "redux-thunk": "^2.3.0",
-    "scalable-form-antd": "^1.0.0",
-    "scalable-form-core": "^1.0.0"
+    "scalable-form-antd": "^0.2.0",
+    "scalable-form-antd-mobile": "^0.2.0",
+    "scalable-form-core": "^0.2.0",
+    "scalable-form-tools": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
@@ -69,6 +68,9 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@types/classnames": "^2.2.7",
+    "@types/lodash": "^4.14.150",
+    "@types/react-beautiful-dnd": "^12.1.2",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
@@ -76,9 +78,6 @@
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
-    "eslint": "6.6.0",
-    "eslint-loader": "3.0.2",
-    "eslint-plugin-react": "7.16.0",
     "jest": "^24.7.1",
     "jest-environment-enzyme": "^7.0.2",
     "jest-enzyme": "^7.0.2",
@@ -91,7 +90,12 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.js?$": "babel-jest"
+      "^.+\\.(js|jsx|ts|tsx)?$": [
+        "babel-jest",
+        {
+          "rootMode": "upward"
+        }
+      ]
     },
     "verbose": true,
     "collectCoverage": true,
@@ -101,11 +105,15 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "testRegex": "((\\.|/)(test|spec))\\.js?$",
+    "coveragePathIgnorePatterns": [
+      "/src/schema/"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",
-      "jsx"
+      "jsx",
+      "ts",
+      "tsx"
     ],
     "moduleNameMapper": {
       "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "<rootDir>/test/EmptyModule"

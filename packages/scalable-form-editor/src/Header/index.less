@@ -1,0 +1,42 @@
+@import "../utils/variable.less";
+
+.scalable-form-builder-header {
+  background: #fff;
+  border: 1px solid @default-border-color;
+  display: flex;
+  height: 48px;
+  position: relative;
+
+  .header-divider {
+    flex: 1;
+  }
+
+  .opt-item {
+    color: rgba(0, 0, 0, .65);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 14px;
+
+    &.preview {
+      color: @default-link-color;
+    }
+
+    .opt-icon {
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: @default-link-color;
+    }
+  }
+
+  .opt-rear-list {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

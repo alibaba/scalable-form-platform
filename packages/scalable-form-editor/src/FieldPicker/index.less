@@ -1,0 +1,98 @@
+/**
+ * “字段选择”组件样式
+ */
+@import "../utils/variable";
+
+.scalable-form-field-picker-panel {
+  .field-search-box {
+    padding: 8px 13px;
+
+    .ant-input-suffix {
+      right: 20px;
+    }
+  }
+
+  .common-field-template,
+  .custom-field-template {
+    border-bottom: 1px solid @default-border-color;
+
+    .field-panel {
+      color: @default-first-class-font-color;
+      cursor: pointer;
+      height: 40px;
+      padding: 10px 16px;
+
+      .icon {
+        display: inline-block;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+
+      .template-title {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 12px;
+      }
+
+      &.fold {
+        .icon {
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+
+  .template-list {
+    div {
+      color: @default-second-class-font-color;
+      cursor: pointer;
+      height: 40px;
+
+      .list-item {
+        border-bottom: 1px solid @default-border-color;
+        font-size: 13px;
+        height: 40px;
+        line-height: 20px;
+        margin: 0 16px;
+        overflow: hidden;
+        padding: 10px 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        .template-icon {
+          font-size: 13px;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+      }
+
+      &:last-child {
+        .list-item {
+          border-bottom: none;
+        }
+      }
+
+      &:hover {
+        background: @default-hover-bg-color;
+      }
+    }
+  }
+
+  .empty-box {
+    color: @default-third-class-font-color;
+    margin-top: 50%;
+    padding: 10px 0;
+    text-align: center;
+
+    .empty-icon {
+      font-size: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .empty-tip {
+      font-size: 12px;
+    }
+  }
+}

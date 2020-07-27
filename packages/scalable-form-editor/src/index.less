@@ -1,0 +1,78 @@
+/* 所有样式必须添加命名空间，防止全局污染 */
+
+@import "utils/variable.less";
+@import "utils/scrollbar.less";
+@import "utils/font.less";
+
+.scalable-form-builder {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+
+  .height100 {
+    height: 100%;
+  }
+
+  .scalable-form-builder-panel {
+    border: 1px solid @default-border-color;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+
+    .scalable-form-field-picker-panel {
+      background: @color-white;
+      display: inline-block;
+      margin-top: -1px;
+      overflow: auto;
+      width: 200px;
+    }
+
+    .field-list-panel {
+      background: @default-bg-color;
+      flex: 1;
+      overflow: auto;
+
+      .scalable-form-mobile-wrapper {
+        margin: 0 auto;
+        max-width: 400px;
+      }
+    }
+  }
+
+  .field-config-drawer-panel {
+    background: @color-white;
+    border-radius: 2px;
+    display: inline-block;
+    margin-top: 1px;
+    overflow: auto;
+    position: relative;
+    transition: width .5s;
+    width: 0;
+
+    .close-icon {
+      color: @default-first-class-font-color;
+      cursor: pointer;
+      font-size: 14px;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+  }
+
+  .app-xform-builder-action {
+    margin-top: 15px;
+    text-align: right;
+  }
+
+  &.fullscreen {
+    background: @color-white;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: @zIndex;
+  }
+}

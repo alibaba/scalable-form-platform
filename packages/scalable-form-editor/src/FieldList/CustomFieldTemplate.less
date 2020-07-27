@@ -1,0 +1,76 @@
+@import "../utils/variable";
+
+.scalable-form-editor-field {
+  background: #fff;
+  border: 1px solid #fff;
+  padding: 5px 30px;
+  position: relative;
+
+  .field-title {
+    .ant-tag {
+      position: relative;
+      top: -1px;
+    }
+
+    &::before {
+      color: #f04134;
+      content: "*";
+      display: inline-block;
+      font-size: 17px;
+      line-height: .5;
+      margin-right: 4px;
+    }
+  }
+
+  .field-index-number {
+    background: @color-gray;
+    color: @color-white;
+    font-size: 12px;
+    height: 14px;
+    left: 0;
+    line-height: 14px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 20px;
+    z-index: 100;
+  }
+
+  .field-action-delete {
+    color: #666;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    transition: opacity .1s;
+
+    .xform-iconfont {
+      font-size: 12px;
+    }
+  }
+
+  &.selected {
+    border: 1px solid #2190ef;
+
+    .field-index-number {
+      background: #2190ef;
+    }
+  }
+
+  &.dragging {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+  }
+
+  &:hover {
+    .field-action-delete {
+      opacity: 1;
+    }
+  }
+}
+
+.scalable-form-editor-root {
+  margin: 0 auto;
+  max-width: 500px;
+}
