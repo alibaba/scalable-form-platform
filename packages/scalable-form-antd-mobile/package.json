@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-antd-mobile",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A react component for rendering web forms in mobile browser from JSON schema using ant design mobile components",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
@@ -20,8 +20,8 @@
   "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
   "repository": "https://github.com/alibaba/scalable-form-platform",
   "license": "MIT",
-  "main": "src/index.js",
-  "typings": "src/index.js",
+  "main": "src/index.tsx",
+  "typings": "src/index.tsx",
   "author": {
     "name": "alibaba"
   },
@@ -41,7 +41,7 @@
     "start": "exit 0",
     "stop": "exit 0",
     "build": "npm run build:dir && npm run build:js && npm run build:copy",
-    "test": "jest --updateSnapshot --coverage",
+    "test": "jest --updateSnapshot --coverage --no-cache",
     "publish": "npm run build:dir && npm run build:js && node ./prepare.js && npm publish build",
     "build:dir": "rimraf ./build && mkdir build",
     "build:js": "cross-env NODE_ENV=production webpack --config ./webpack.config.babel.js --colors",
@@ -50,21 +50,25 @@
   "dependencies": {
     "antd-mobile": "^2.3.1",
     "classnames": "^2.2.6",
-    "merge": "^1.2.0",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "natty-fetch": "^2.5.3",
     "prop-types": "^15.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-if": "^2.2.1",
-    "scalable-form-core": "^1.0.0"
+    "scalable-form-core": "^0.2.0",
+    "scalable-form-tools": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.6.3",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/lodash": "^4.14.150",
+    "@types/react-dom": "^16.8.4",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
@@ -87,7 +91,12 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.js?$": "babel-jest"
+      "^.+\\.(js|jsx|ts|tsx)?$": [
+        "babel-jest",
+        {
+          "rootMode": "upward"
+        }
+      ]
     },
     "verbose": true,
     "collectCoverage": true,
@@ -97,11 +106,12 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "testRegex": "((\\.|/)(test|spec))\\.js?$",
     "moduleFileExtensions": [
       "js",
       "json",
-      "jsx"
+      "jsx",
+      "ts",
+      "tsx"
     ],
     "moduleNameMapper": {
       "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "<rootDir>/test/EmptyModule"

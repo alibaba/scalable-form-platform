@@ -1,0 +1,45 @@
+@import "../variable.less";
+
+.@{prefixCls}-root-container {
+  .scalable-form-upload {
+    .example-link {
+      color: #1890ff;
+    }
+
+    .am-list-line {
+      .am-list-content {
+        margin-right: 10px;
+        max-width: 100px;
+        width: 100px;
+      }
+
+      .am-list-extra {
+        -webkit-flex: 1;
+        flex: 1;
+      }
+    }
+
+    .am-flexbox {
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+
+    &.disabled {
+      .am-list-content,
+      .am-list-extra {
+        color: #bbb;
+      }
+    }
+  }
+
+  .scalable-form-image-preview-modal {
+    width: 100% !important;
+
+    .scalable-form-image-preview-wrapper {
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
