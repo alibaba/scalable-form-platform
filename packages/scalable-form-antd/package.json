@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-antd",
-  "version": "0.0.15",
+  "version": "1.0.0",
   "description": "A react component for rendering web forms from JSON schema using ant design components",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
@@ -57,7 +57,7 @@
     "react-dom": "^16.8.6",
     "react-if": "^2.2.1",
     "react-quill": "^1.3.3",
-    "scalable-form-core": "^0.0.15"
+    "scalable-form-core": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

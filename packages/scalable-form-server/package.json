@@ -1,6 +1,6 @@
 {
   "name": "scalable-form-server",
-  "version": "0.0.15",
+  "version": "1.0.0",
   "description": "Scalable Form server sdk, providing koa/express middleware to apply Scalable Form web site",
   "homepage": "https://scalable-form-platform.github.io",
   "keywords": [
