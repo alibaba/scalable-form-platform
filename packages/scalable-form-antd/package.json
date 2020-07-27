@@ -47,7 +47,7 @@
     "build:copy": "mkdir ../../dist/scalable-form-antd && ls ./build/* && cp ./build/* ../../dist/scalable-form-antd/"
   },
   "dependencies": {
-    "@rjsf/core": "2.0.1",
+    "@rjsf/core": "2.2.2",
     "antd": "^4.1.4",
     "classnames": "^2.2.6",
     "moment": "^2.24.0",

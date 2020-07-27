@@ -45,7 +45,7 @@
     "build:copy": "mkdir ../../dist/scalable-form-core && ls ./build/* && cp ./build/* ../../dist/scalable-form-core/"
   },
   "dependencies": {
-    "@rjsf/core": "2.0.1",
+    "@rjsf/core": "2.2.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-is": "16.9.0"

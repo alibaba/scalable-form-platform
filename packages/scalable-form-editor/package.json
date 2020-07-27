@@ -47,7 +47,7 @@
     "build:copy": "mkdir ../../dist/scalable-form-editor && ls ./build/* && cp ./build/* ../../dist/scalable-form-editor/"
   },
   "dependencies": {
-    "@rjsf/core": "2.0.1",
+    "@rjsf/core": "2.2.2",
     "@types/json-schema": "^7.0.4",
     "antd": "^4.1.4",
     "classnames": "^2.2.6",

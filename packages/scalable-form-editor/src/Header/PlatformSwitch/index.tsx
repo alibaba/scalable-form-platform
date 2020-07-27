@@ -1,6 +1,6 @@
 import React from 'react';
 import { Popover, Radio } from 'antd';
-import { Locale, Platform, useGetMessage } from 'scalable-form-tools';
+import { Platform, useGetMessage } from 'scalable-form-tools';
 import './index.less';
 
 const RadioGroup = Radio.Group;
@@ -13,7 +13,7 @@ interface Props {
   /**
    * 当前语言
    */
-  locale: Locale;
+  // locale: Locale;
   onUpdatePlatform: (newPlatform: Platform) => void;
 }
 

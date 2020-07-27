@@ -4,7 +4,7 @@ import { JSONSchema, UiSchema, FormData } from 'scalable-form-core';
 import { LanguagePack, Locale, WidgetKey } from 'scalable-form-tools';
 import ConfigSchema from '../schema/ConfigSchema';
 import { getFormDataBySchema, getWidgetKeyById, updateSchema } from '../schema/SchemaUtils';
-import PickerItem from '../schema/PickerItem';
+// import PickerItem from '../schema/PickerItem';
 import getConfigSchema from '../utils/getConfigSchema';
 import { IChangeEvent } from '@rjsf/core';
 
@@ -20,7 +20,7 @@ interface FieldConfigProps {
   /**
    * 选择器列表
    */
-  pickerList: PickerItem[];
+  // pickerList: PickerItem[];
   /**
    * 当前选中的widgetId
    */
