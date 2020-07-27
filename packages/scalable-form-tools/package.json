@@ -1,0 +1,110 @@
+{
+  "name": "scalable-form-tools",
+  "version": "0.2.0",
+  "description": "A set of scalable form tools",
+  "homepage": "https://scalable-form-platform.github.io",
+  "keywords": [
+    "javascript",
+    "react",
+    "json-schema",
+    "form",
+    "ui",
+    "ui-components",
+    "json",
+    "solution",
+    "sdk"
+  ],
+  "bugs": "https://github.com/alibaba/scalable-form-platform/issues",
+  "repository": "https://github.com/alibaba/scalable-form-platform",
+  "author": {
+    "name": "alibaba"
+  },
+  "contributors": [
+    "吕舜 lvshun@live.cn",
+    "Ma Yongxin"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "typings": "src/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "dev": "exit 0",
+    "start": "exit 0",
+    "stop": "exit 0",
+    "test": "jest --updateSnapshot --coverage",
+    "publish": "exit 0",
+    "build": "exit 0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "scalable-form-core": "^0.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@babel/runtime": "^7.7.2",
+    "@types/json-schema": "^7.0.4",
+    "@types/lodash": "^4.14.150",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^6.0.3",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "eslint": "6.6.0",
+    "eslint-loader": "3.0.2",
+    "eslint-plugin-react": "7.16.0",
+    "jest": "^24.7.1",
+    "jest-environment-enzyme": "^7.0.2",
+    "jest-enzyme": "^7.0.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)?$": "babel-jest"
+    },
+    "verbose": true,
+    "collectCoverage": true,
+    "setupFiles": [
+      "<rootDir>/test/test-setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/src/fileUtils/",
+      "/src/error/",
+      "/src/logger/",
+      "/src/locale/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "ts",
+      "tsx"
+    ],
+    "moduleNameMapper": {
+      "^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS)$": "<rootDir>/test/EmptyModule"
+    },
+    "unmockedModulePathPatterns": [
+      "<rootDir>/test/EmptyModule.js"
+    ]
+  },
+  "gitHead": "74c6f603f5146d0592550bcf588b1ee0345895ab"
+}
