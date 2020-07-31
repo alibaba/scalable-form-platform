@@ -50,11 +50,11 @@ export default class RichTextWidget extends PureComponent<RichTextWidgetProps, R
     Quill.register(this.sizeStyle, true);
 
     this.state = {
-      htmlValue: props.value,
+      htmlValue: props.value || '',
       // Updating state based on props
       // eslint-disable-next-line max-len
       // https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#alternative-1-reset-uncontrolled-component-with-an-id-prop
-      preHtmlValue: props.value,
+      preHtmlValue: props.value || '',
     };
   }
 
@@ -87,14 +87,14 @@ export default class RichTextWidget extends PureComponent<RichTextWidgetProps, R
     const { theme = 'snow', modules, ...restOptions } = options;
 
     const customModules = this.customModulesToolbar(modules);
-
+    console.log(htmlValue);
     return (
       <div className="ant-form-item-control xform-custom-widget xform-custom-richtext">
         <ReactQuill
           {...restOptions}
           ref={this.handleRef}
           theme={theme}
-          value={htmlValue}
+          value={htmlValue || ''}
           readOnly={readonly || disabled}
           placeholder={placeholder}
           modules={customModules}

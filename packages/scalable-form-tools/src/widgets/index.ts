@@ -112,6 +112,11 @@ enum WidgetKey {
    * @type {string}
    */
   ObjectField = 'ObjectField',
+  /**
+   * OptionEditor
+   * @type {string}
+   */
+  OptionEditor = 'OptionEditor',
 }
 
 export default WidgetKey;

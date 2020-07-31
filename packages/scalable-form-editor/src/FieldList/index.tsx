@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { JSONSchema, UiSchema } from 'scalable-form-core';
-import { Platform } from 'scalable-form-tools';
+import { Platform, WidgetKey } from "scalable-form-tools";
 import ScalableForm from 'scalable-form-antd';
 import { Droppable, DroppableProvided } from 'react-beautiful-dnd';
 import { DropField } from '../utils/Config';
 import CustomFieldTemplate from './CustomFieldTemplate';
 import ScalableFormMobile from 'scalable-form-antd-mobile';
 import './index.less';
+import OptionEditorWidget from "../components/OptionEditorWidget";
 
 interface Props {
   /**
@@ -61,7 +62,8 @@ const FieldList: React.FC<Props> = (props: Props) => {
                 </div>
               ) : (
                 <div className={`pc-preview-holder ${isPreview ? 'preview' : ''}`}>
-                  <ScalableForm schema={props.schema} uiSchema={props.uiSchema} FieldTemplate={Template}>
+                  <ScalableForm
+                    schema={props.schema} uiSchema={props.uiSchema} FieldTemplate={Template}>
                     {defaultButton}
                   </ScalableForm>
                 </div>

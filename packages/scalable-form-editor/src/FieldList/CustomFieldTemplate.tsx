@@ -4,10 +4,12 @@ import { DraggableProvided, Draggable } from 'react-beautiful-dnd';
 import { FieldProps } from '@rjsf/core';
 import SchemaContext from '../schema/SchemaContext';
 import { Tag } from 'antd';
-import { getCurrentIndexByUiSchema, getWidgetId, getWidgetKeyById, isFieldRoot } from '../schema/SchemaUtils';
+import { getCurrentIndexByIdAndUiSchema, getWidgetId, getWidgetKeyById, isFieldRoot } from '../schema/SchemaUtils';
 import { DropField } from '../utils/Config';
 import './CustomFieldTemplate.less';
 import PickerItem from '../schema/PickerItem';
+import { WidgetKey } from "scalable-form-tools";
+import ObjectTemplate from "./ObjectTemplate";
 
 const CustomFieldTemplate: React.FC<FieldProps> = (props: FieldProps) => {
   const {
@@ -18,6 +20,12 @@ const CustomFieldTemplate: React.FC<FieldProps> = (props: FieldProps) => {
     pickerList,
   } = useContext(SchemaContext);
   const { schema, uiSchema, id, required } = props;
+  console.log(23, props);
+  // if(uiSchema["ui:widget"] === WidgetKey.ObjectField){
+  //   return (
+  //     <ObjectTemplate {...props} />
+  //   );
+  // }
   const hidden: boolean = uiSchema['ui:hidden'] || false;
   const widgetId = useMemo(() => {
     return getWidgetId(id || '');
@@ -25,8 +33,9 @@ const CustomFieldTemplate: React.FC<FieldProps> = (props: FieldProps) => {
   const widgetKey = useMemo(() => {
     return getWidgetKeyById(widgetId, globalUiSchema);
   }, [widgetId, globalUiSchema]);
+
   const index = useMemo(() => {
-    return getCurrentIndexByUiSchema(widgetId, globalUiSchema);
+    return getCurrentIndexByIdAndUiSchema(id || '', globalUiSchema);
   }, [widgetId, globalUiSchema]);
   const pickerItem: PickerItem | undefined = useMemo(() => {
     return pickerList.find((picker: PickerItem) => {

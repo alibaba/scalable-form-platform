@@ -31,6 +31,10 @@ export default function getConfigSchema(getMessage: (key: string) => string): Co
           type: 'boolean',
           title: getMessage('configSchemaRequiredTitle'),
         },
+        items: {
+          type: 'string',
+          title: '选项(拖放选项以排序)',
+        },
         hidden: {
           type: 'boolean',
           title: getMessage('configSchemaHiddenTitle'),
@@ -68,6 +72,12 @@ export default function getConfigSchema(getMessage: (key: string) => string): Co
       },
       value: {
         'ui:widget': WidgetKey.RadioWidget,
+        'ui:options': {
+          placeholder: getMessage('configSchemaSelectValuePlaceholder'),
+        },
+      },
+      items: {
+        'ui:widget': WidgetKey.OptionEditor,
         'ui:options': {
           placeholder: getMessage('configSchemaSelectValuePlaceholder'),
         },

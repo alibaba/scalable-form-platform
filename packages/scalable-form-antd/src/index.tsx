@@ -75,7 +75,10 @@ class ScalableFormAntd extends PureComponent<ScalableFormAntdProps> {
     return (
       <ScalableFormCore
         {...this.props}
-        widgets={customWidgets}
+        widgets={{
+          ...customWidgets,
+          ...(this.props.widgets || {})
+        }}
         FieldTemplate={this.props.FieldTemplate || CustomFieldTemplate}
         ArrayFieldTemplate={this.props.ArrayFieldTemplate || CustomArrayFieldTemplateProps}
       >

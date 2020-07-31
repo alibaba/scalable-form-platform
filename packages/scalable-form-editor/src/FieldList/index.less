@@ -1,6 +1,27 @@
 @import "../utils/variable";
 
 .scalable-form-builder {
+  p {
+    margin-bottom: 0;
+  }
+  .field-list-title-editor, .field-list-description-editor {
+    margin: 10px auto;
+    max-width: 500px;
+    padding: 0 10px;
+
+    .field-title-label, .field-description-label {
+      margin-bottom: 5px;
+    }
+  }
+
+  #root__title {
+    display: none;
+  }
+
+  #root__description {
+    display: none;
+  }
+
   .mobile-preview-holder {
     &.preview {
       //background: url(http://gtms03.alicdn.com/tps/i3/TB1n05NGFXXXXbeXFXX7XyaQpXX-478-963.png);

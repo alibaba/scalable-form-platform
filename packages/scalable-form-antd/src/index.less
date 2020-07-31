@@ -3,6 +3,10 @@
  */
 
 .scalable-form-root {
+  p {
+    margin-bottom: 0;
+  }
+
   .scalable-form-item {
     margin-bottom: 18px;
   }
@@ -42,6 +46,7 @@
   }
 
   /* 隐藏field的title，可配置在xform标签或ui:schema的classNames属性 */
+
   &.scalable-form-title-hidden {
     label.control-label {
       display: none !important;
@@ -49,6 +54,7 @@
   }
 
   /* 隐藏xform的提交按钮，xform标签使用 */
+
   &.scalable-form-action-hidden {
     .scalable-form-submit-button {
       display: none !important;
@@ -72,6 +78,7 @@
   }
 
   /* 修正.ant-form-item-control样式对富文本编辑器toolbar的样式影响 */
+
   .ant-form-item-control {
     &.scalable-form-custom-richtext {
       line-height: normal;
@@ -79,17 +86,20 @@
   }
 
   /* 修正Select和Picker类型选择器宽度不会撑开的问题 */
+
   .ant-cascader-picker,
   .ant-select {
     width: 100%;
   }
 
   /* 修正字段说明中以及段落配置了图片宽度超出容器的问题 */
+
   img {
     max-width: 100%;
   }
 
   /* array类型样式 */
+
   .scalable-form-array-field {
     .scalable-form-array-field-item {
       border-bottom: 1px solid #e5e5e5;

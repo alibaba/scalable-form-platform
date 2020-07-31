@@ -1,30 +1,32 @@
-import React, { PureComponent } from 'react';
-import classNames from 'classnames';
-import PickerItem from './schema/PickerItem';
-import { DropField } from './utils/Config';
-import './index.less';
-import Header from './Header';
-import FieldPicker from './FieldPicker';
-import FieldList from './FieldList';
-import { DragDropContext, DropResult } from 'react-beautiful-dnd';
-import { JSONSchema, UiSchema } from 'scalable-form-core';
-import { LanguagePack, Locale, LocaleContext, Platform } from 'scalable-form-tools';
-import SchemaContext from './schema/SchemaContext';
+import React, { PureComponent } from "react";
+import classNames from "classnames";
+import PickerItem from "./schema/PickerItem";
+import { DropField } from "./utils/Config";
+import "./index.less";
+import Header from "./Header";
+import FieldPicker from "./FieldPicker";
+import FieldList from "./FieldList";
+import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { JSONSchema, UiSchema } from "scalable-form-core";
+import { LanguagePack, Locale, LocaleContext, Platform } from "scalable-form-tools";
+import SchemaContext from "./schema/SchemaContext";
 import {
   deleteWidgetFromSchema,
   getInitJsonSchema,
   getInitUISchema,
   getWidgetId,
   insertWidgetToSchema,
-  updateWidgetOrder,
-} from './schema/SchemaUtils';
-import getPickerList from './utils/getPickerList';
-import localMessages from './localMessages';
-import WidgetKey from 'scalable-form-tools/src/widgets';
-import FieldConfig from './FieldConfig';
-import { isPickerItemInPlatform, formatInitUiSchema } from './utils/Tool';
+  updateWidgetOrder
+} from "./schema/SchemaUtils";
+import getPickerList from "./utils/getPickerList";
+import localMessages from "./localMessages";
+import WidgetKey from "scalable-form-tools/src/widgets";
+import FieldConfig from "./FieldConfig";
+import { isPickerItemInPlatform, formatInitUiSchema } from "./utils/Tool";
+import { Input } from "antd";
 
-const languagePack: LanguagePack = require('../i18n');
+const languagePack: LanguagePack = require("../i18n");
+const { TextArea } = Input;
 
 /**
  * SchemaEditor组件使用props
@@ -42,6 +44,12 @@ interface SchemaEditorProps {
    * 配置出来的表单uiSchema
    */
   initUiSchema: UiSchema;
+  /**
+   * 变化
+   * @param {JSONSchema} schema
+   * @param {UiSchema} uiSchema
+   */
+  onChange?: (schema: JSONSchema, uiSchema: UiSchema) => void
 }
 
 /**
@@ -80,7 +88,7 @@ interface SchemaEditorState {
 
 class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
   static defaultProps = {
-    locale: Locale.ZH_CN,
+    locale: Locale.ZH_CN
   };
 
   constructor(props: SchemaEditorProps) {
@@ -101,16 +109,23 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
       pickerList: getPickerList(Locale.ZH_CN, languagePack),
       schema,
       uiSchema,
-      selectedWidgetId: '',
+      selectedWidgetId: "",
       platform: Platform.BOTH,
       fullscreen: false,
-      preview: false,
+      preview: false
     };
   }
 
+  public getCurrentSchema(){
+    return {
+      schema: this.state.schema,
+      uiSchema: this.state.uiSchema
+    };
+  };
+
   private handleInsertWidget = (widgetKey: WidgetKey) => {
     const originUiSchema: UiSchema = this.state.uiSchema;
-    const order: string[] = originUiSchema['ui:order'] || [];
+    const order: string[] = originUiSchema["ui:order"] || [];
     this.handleInsertWidgetByIndex(widgetKey, order.length || 0);
   };
 
@@ -119,11 +134,15 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
       schema: this.state.schema,
       uiSchema: this.state.uiSchema,
       languagePack,
-      locale: this.props.locale || Locale.ZH_CN,
+      locale: this.props.locale || Locale.ZH_CN
     });
     this.setState({
       schema: newSchema,
-      uiSchema: newUiSchema,
+      uiSchema: newUiSchema
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(newSchema, newUiSchema);
+      }
     });
   };
 
@@ -131,13 +150,17 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
     this.setState({
       uiSchema: newUiSchema,
       schema: newJsonSchema,
-      selectedWidgetId: newSelectedFieldId,
+      selectedWidgetId: newSelectedFieldId
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(newJsonSchema, newUiSchema);
+      }
     });
   };
 
   private handleUpdateSelectedFieldId = (selectedWidgetId: string) => {
     this.setState({
-      selectedWidgetId,
+      selectedWidgetId
     });
   };
 
@@ -146,11 +169,15 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
       schema: this.state.schema,
       uiSchema: this.state.uiSchema,
       languagePack,
-      locale: this.props.locale || Locale.ZH_CN,
+      locale: this.props.locale || Locale.ZH_CN
     });
     this.setState({
       schema: newSchema,
-      uiSchema: newUiSchema,
+      uiSchema: newUiSchema
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(newSchema, newUiSchema);
+      }
     });
   };
 
@@ -159,11 +186,15 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
       schema: this.state.schema,
       uiSchema: this.state.uiSchema,
       languagePack,
-      locale: this.props.locale || Locale.ZH_CN,
+      locale: this.props.locale || Locale.ZH_CN
     });
     this.setState({
       schema: newSchema,
-      uiSchema: newUiSchema,
+      uiSchema: newUiSchema
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(newSchema, newUiSchema);
+      }
     });
   };
 
@@ -183,19 +214,49 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
 
   private handleUpdatePlatform = (newPlatform: Platform) => {
     this.setState({
-      platform: newPlatform,
+      platform: newPlatform
     });
   };
 
   private handleToggleFullScreen = () => {
     this.setState({
-      fullscreen: !this.state.fullscreen,
+      fullscreen: !this.state.fullscreen
     });
   };
 
   private handleTogglePreview = () => {
     this.setState({
-      preview: !this.state.preview,
+      preview: !this.state.preview
+    });
+  };
+
+  public handleSchemaTitleChanged = (e: any) => {
+    const title = e.target.value || "";
+    const schema: JSONSchema = this.state.schema || {};
+    schema.title = title;
+    this.setState({
+      schema: {
+        ...schema
+      }
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(schema, this.state.uiSchema);
+      }
+    });
+  };
+
+  public handleSchemaDescriptionChanged = (e: any) => {
+    const description = e.target.value || "";
+    const schema: JSONSchema = this.state.schema || {};
+    schema.description = description;
+    this.setState({
+      schema: {
+        ...schema
+      }
+    }, () => {
+      if(this.props.onChange){
+        this.props.onChange(schema, this.state.uiSchema);
+      }
     });
   };
 
@@ -208,12 +269,14 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
     if (filterPickerList.length > 15) {
       maxHeight = filterPickerList.length * 40;
     }
+    console.log(211, this.state.schema);
+    const schema: JSONSchema = this.state.schema || {};
     return (
       <LocaleContext.Provider
         value={{
           locale: this.props.locale || Locale.ZH_CN,
           languagePack,
-          localMessages,
+          localMessages
         }}
       >
         <SchemaContext.Provider
@@ -223,16 +286,16 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
             uiSchema: this.state.uiSchema,
             selectedWidgetId,
             onUpdateSelectedWidgetId: this.handleUpdateSelectedFieldId,
-            onDeleteWidgetById: this.handleDeleteWidgetById,
+            onDeleteWidgetById: this.handleDeleteWidgetById
           }}
         >
           <div
             className={classNames({
-              'scalable-form-builder': true,
-              fullscreen,
+              "scalable-form-builder": true,
+              fullscreen
             })}
             style={{
-              width: fullscreen ? '100%' : 'auto',
+              width: fullscreen ? "100%" : "auto"
             }}
           >
             <Header
@@ -249,7 +312,7 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
                 <div
                   className="scalable-form-field-picker-panel"
                   style={{
-                    height: fullscreen ? '100%' : 'auto',
+                    height: fullscreen ? "100%" : "auto"
                   }}
                 >
                   <FieldPicker
@@ -261,10 +324,27 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
                 <div
                   className="field-list-panel"
                   style={{
-                    height: fullscreen ? '100%' : 'auto',
-                    maxHeight: fullscreen ? undefined : maxHeight,
+                    height: fullscreen ? "100%" : "auto",
+                    maxHeight: fullscreen ? undefined : maxHeight
                   }}
                 >
+                  <div className="field-list-title-editor">
+                    <div className="field-title-label">
+                      表单标题
+                    </div>
+                    <div className="field-title-value">
+                      <Input value={schema.title} onChange={this.handleSchemaTitleChanged}/>
+                    </div>
+                  </div>
+                  <div className="field-list-description-editor">
+                    <div className="field-description-label">
+                      表单描述
+                    </div>
+                    <div className="field-description-value">
+                      <TextArea autoSize={{ minRows: 2 }} value={schema.description}
+                                onChange={this.handleSchemaDescriptionChanged}/>
+                    </div>
+                  </div>
                   <FieldList
                     isPreview={this.state.preview}
                     platform={this.state.platform}
@@ -277,8 +357,8 @@ class SchemaEditor extends PureComponent<SchemaEditorProps, SchemaEditorState> {
                 className="field-config-drawer-panel"
                 style={{
                   width: fullscreen || selectedWidgetId ? 380 : 0,
-                  height: fullscreen ? '100%' : 'auto',
-                  display: fullscreen || selectedWidgetId ? 'block' : 'none',
+                  height: fullscreen ? "100%" : "auto",
+                  display: fullscreen || selectedWidgetId ? "block" : "none"
                 }}
               >
                 {this.state.selectedWidgetId ? (

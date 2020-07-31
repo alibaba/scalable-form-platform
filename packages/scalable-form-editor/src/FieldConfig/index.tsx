@@ -1,12 +1,14 @@
-import React from 'react';
-import Form from 'scalable-form-antd';
-import { JSONSchema, UiSchema, FormData } from 'scalable-form-core';
-import { LanguagePack, Locale, WidgetKey } from 'scalable-form-tools';
-import ConfigSchema from '../schema/ConfigSchema';
-import { getFormDataBySchema, getWidgetKeyById, updateSchema } from '../schema/SchemaUtils';
-// import PickerItem from '../schema/PickerItem';
-import getConfigSchema from '../utils/getConfigSchema';
-import { IChangeEvent } from '@rjsf/core';
+import React from "react";
+import Form from "scalable-form-antd";
+import { JSONSchema, UiSchema, FormData } from "scalable-form-core";
+import { LanguagePack, Locale, WidgetKey } from "scalable-form-tools";
+import ConfigSchema from "../schema/ConfigSchema";
+import { getFormDataBySchema, getWidgetKeyById, updateSchema } from "../schema/SchemaUtils";
+import PickerItem from "../schema/PickerItem";
+import getConfigSchema from "../utils/getConfigSchema";
+import { IChangeEvent } from "@rjsf/core";
+import OptionEditorWidget from "../components/OptionEditorWidget";
+import './index.less';
 
 interface FieldConfigProps {
   /**
@@ -20,7 +22,7 @@ interface FieldConfigProps {
   /**
    * 选择器列表
    */
-  // pickerList: PickerItem[];
+  pickerList: PickerItem[];
   /**
    * 当前选中的widgetId
    */
@@ -46,25 +48,31 @@ export default function FieldConfig(props: FieldConfigProps) {
       widgetKey,
       fieldConfigFormData,
       schema,
-      uiSchema,
+      uiSchema
     );
-    let newSelectedWidgetId: string = (formData.code as string) || '';
+    let newSelectedWidgetId: string = (formData.code as string) || "";
     if (formData.code !== fieldConfigFormData.code) {
-      newSelectedWidgetId = (fieldConfigFormData.code as string) || '';
+      newSelectedWidgetId = (fieldConfigFormData.code as string) || "";
     }
     onChange(newJsonSchema, newUiSchema, newSelectedWidgetId);
   };
   return (
-    <Form schema={configJsonSchema} uiSchema={configUiSchema} formData={formData} onChange={handleFormDataChanged}>
-      <div />
-    </Form>
+    <div className="scalable-form-editor-config">
+      <Form
+        widgets={{
+          [WidgetKey.OptionEditor]: OptionEditorWidget
+        }}
+        schema={configJsonSchema} uiSchema={configUiSchema} formData={formData} onChange={handleFormDataChanged}>
+        <div/>
+      </Form>
+    </div>
   );
 }
 
 function getConfigJsonSchemaByOriginSchema(
   selectedWidgetId: string,
   configJsonSchema: JSONSchema,
-  schema: JSONSchema,
+  schema: JSONSchema
 ): JSONSchema {
   const properties = configJsonSchema.properties || {};
   const originProperties = schema.properties || {};
@@ -75,12 +83,14 @@ function getConfigJsonSchemaByOriginSchema(
       type: property.type,
       default: property.default,
       enum: property.enum || undefined,
-      enumNames: property.enumNames || undefined,
-      items: property.items,
+      enumNames: property.enumNames || undefined
     };
+    if (property.items) {
+      properties.value.items = property.items;
+    }
   }
   return {
     ...configJsonSchema,
-    properties,
+    properties
   };
 }

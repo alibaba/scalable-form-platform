@@ -7,19 +7,24 @@
   position: relative;
 
   .field-title {
+
+    &.required {
+      &::before {
+        color: #f04134;
+        content: "*";
+        display: inline-block;
+        font-size: 17px;
+        line-height: .5;
+        margin-right: 4px;
+      }
+    }
+
     .ant-tag {
       position: relative;
       top: -1px;
     }
 
-    &::before {
-      color: #f04134;
-      content: "*";
-      display: inline-block;
-      font-size: 17px;
-      line-height: .5;
-      margin-right: 4px;
-    }
+
   }
 
   .field-index-number {

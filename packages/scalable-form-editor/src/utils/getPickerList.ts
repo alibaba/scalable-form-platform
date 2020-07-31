@@ -9,6 +9,12 @@ export default function getPickerList(locale: Locale, languagePack: LanguagePack
     return getMessageByKey(key, locale, localMessages, languagePack);
   }
   return [
+    // {
+    //   key: WidgetKey.ObjectField,
+    //   icon: '&#xe674;',
+    //   label: '嵌套',
+    //   platform: ['laptop', 'mobile'],
+    // },
     {
       key: WidgetKey.LabelWidget,
       icon: '&#xe674;',
